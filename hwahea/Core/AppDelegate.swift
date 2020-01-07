@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     return true
   }
+  
 
   private func setupRoot() {
     let window = UIWindow(frame: UIScreen.main.bounds)
