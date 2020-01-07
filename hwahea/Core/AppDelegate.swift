@@ -23,9 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   private func setupRoot() {
     let window = UIWindow(frame: UIScreen.main.bounds)
-    window.rootViewController = ViewController()
-    window.backgroundColor = .white
-    window.makeKeyAndVisible()
+    Application.shared.setupInitialScreen(in: window)
     self.window = window
   }
 }
