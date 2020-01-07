@@ -1,0 +1,6 @@
+framework module Pods_hwaheaUITests {
+  umbrella header "Pods-hwaheaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
