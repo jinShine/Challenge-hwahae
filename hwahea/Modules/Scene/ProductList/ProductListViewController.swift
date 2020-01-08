@@ -105,7 +105,7 @@ class ProductListViewController: BaseViewController {
   }()
 
   //MARK:- Properties
-
+  var previousContentOffset: CGFloat = 0.0
 
   //MARK:- Init
 
@@ -167,4 +167,27 @@ class ProductListViewController: BaseViewController {
 
   }
 
+}
+
+extension ProductListViewController: UIScrollViewDelegate {
+  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    print(scrollView)
+    let currentOffset = scrollView.contentOffset.y - previousContentOffset
+    if currentOffset > previousContentOffset {
+      categoryHeaderView.snp.updateConstraints {
+        $0.height.equalTo(50)
+      }
+      
+    } else if currentOffset < previousContentOffset {
+        categoryHeaderView.snp.updateConstraints {
+          $0.height.equalTo(0)
+        }
+    }
+    previousContentOffset = scrollView.contentOffset.y
+  }
+  
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    previousContentOffset = scrollView.contentOffset.y
+  }
 }
