@@ -22,9 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
 
   private func setupRoot() {
-    let window = UIWindow(frame: UIScreen.main.bounds)
-    Application.shared.setupInitialScreen(in: window)
-    self.window = window
+    Application.shared.setupInitialScreen()
+    self.window = Application.shared.window
   }
 }
 

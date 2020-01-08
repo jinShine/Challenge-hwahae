@@ -10,18 +10,17 @@ import UIKit
 
 class Application {
   
-  let repository = AppRepository()
-  
   var window: UIWindow?
   var navigator: Navigator
+  let repository: AppRepository
   
   private init() {
     self.navigator = Navigator()
+    self.repository = AppRepository()
   }
   
-  func setupInitialScreen(in window: UIWindow?) {
-    guard let window = window else { return }
-    
+  func setupInitialScreen() {
+    let window = UIWindow(frame: UIScreen.main.bounds)
     window.rootViewController = navigator.navigate(to: .productList)
     window.backgroundColor = .white
     window.makeKeyAndVisible()
