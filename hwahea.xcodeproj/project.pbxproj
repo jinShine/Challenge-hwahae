@@ -22,6 +22,11 @@
 		5C92421723C4E29C0074E54A /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92421623C4E29C0074E54A /* AppRepository.swift */; };
 		5C92421B23C4EB8C0074E54A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92421A23C4EB8C0074E54A /* BaseNavigationController.swift */; };
 		5C92421D23C4ED6F0074E54A /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92421C23C4ED6F0074E54A /* DebugPrint.swift */; };
+		5C92422223C60DB60074E54A /* RefreshFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92422123C60DB60074E54A /* RefreshFooterView.swift */; };
+		5C92422423C60F230074E54A /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92422323C60F230074E54A /* UIView+Additions.swift */; };
+		5C92422923C612590074E54A /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92422823C612590074E54A /* ProductCell.swift */; };
+		5C92422B23C6129C0074E54A /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92422A23C6129C0074E54A /* BaseCollectionViewCell.swift */; };
+		5C92422D23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92422C23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift */; };
 		5CF3E0FB23C56D480041A30D /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E0FA23C56D480041A30D /* ProductDetailViewController.swift */; };
 		5CF3E0FD23C56DB80041A30D /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E0FC23C56DB80041A30D /* ProductDetailViewModel.swift */; };
 		5CF3E10123C572A50041A30D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E10023C572A50041A30D /* Font.swift */; };
@@ -74,6 +79,13 @@
 		5C92421623C4E29C0074E54A /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
 		5C92421A23C4EB8C0074E54A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		5C92421C23C4ED6F0074E54A /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
+		5C92421F23C606F00074E54A /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
+		5C92422023C606F20074E54A /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		5C92422123C60DB60074E54A /* RefreshFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFooterView.swift; sourceTree = "<group>"; };
+		5C92422323C60F230074E54A /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		5C92422823C612590074E54A /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		5C92422A23C6129C0074E54A /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		5C92422C23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductListViewController+CollectionViewDecorator.swift"; sourceTree = "<group>"; };
 		5CF3E0FA23C56D480041A30D /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		5CF3E0FC23C56DB80041A30D /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		5CF3E10023C572A50041A30D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -202,6 +214,7 @@
 		5C92420123C4D2F90074E54A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C92421E23C606C90074E54A /* Font */,
 				5C9241D723C4CD960074E54A /* Assets.xcassets */,
 				5C9241D923C4CD960074E54A /* LaunchScreen.storyboard */,
 			);
@@ -237,8 +250,10 @@
 		5C92420523C4D5840074E54A /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
+				5C92422723C612430074E54A /* Cell */,
 				5C92420A23C4D89F0074E54A /* ProductListViewController.swift */,
 				5C92421323C4DF5E0074E54A /* ProductListViewModel.swift */,
+				5C92422C23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -249,6 +264,8 @@
 				5C92420F23C4DDD60074E54A /* BaseViewController.swift */,
 				5C92421123C4DF220074E54A /* BaseViewModel.swift */,
 				5C92421A23C4EB8C0074E54A /* BaseNavigationController.swift */,
+				5C92422123C60DB60074E54A /* RefreshFooterView.swift */,
+				5C92422A23C6129C0074E54A /* BaseCollectionViewCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -259,6 +276,23 @@
 				5C92421623C4E29C0074E54A /* AppRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5C92421E23C606C90074E54A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				5C92421F23C606F00074E54A /* NotoSansCJKkr-Black.otf */,
+				5C92422023C606F20074E54A /* NotoSansCJKkr-Bold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		5C92422723C612430074E54A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5C92422823C612590074E54A /* ProductCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5CF3E0F923C56D310041A30D /* ProductDetail */ = {
@@ -292,6 +326,7 @@
 			children = (
 				5CF3E10523C573490041A30D /* UIColor+Additions.swift */,
 				5CF3E10923C59C6A0041A30D /* CALayer+Sketch.swift */,
+				5C92422323C60F230074E54A /* UIView+Additions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -540,20 +575,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C92420723C4D6CD0074E54A /* Application.swift in Sources */,
+				5C92422D23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift in Sources */,
 				5CF3E10A23C59C6A0041A30D /* CALayer+Sketch.swift in Sources */,
 				5C9241CF23C4CD940074E54A /* AppDelegate.swift in Sources */,
 				5C92421223C4DF220074E54A /* BaseViewModel.swift in Sources */,
+				5C92422423C60F230074E54A /* UIView+Additions.swift in Sources */,
 				5C92420B23C4D89F0074E54A /* ProductListViewController.swift in Sources */,
 				5CF3E10823C575F20041A30D /* Application+Theme.swift in Sources */,
 				5C92420923C4D7800074E54A /* Navigator.swift in Sources */,
 				5C92421B23C4EB8C0074E54A /* BaseNavigationController.swift in Sources */,
 				5C92421423C4DF5E0074E54A /* ProductListViewModel.swift in Sources */,
 				5CF3E10123C572A50041A30D /* Font.swift in Sources */,
+				5C92422923C612590074E54A /* ProductCell.swift in Sources */,
 				5CF3E0FB23C56D480041A30D /* ProductDetailViewController.swift in Sources */,
 				5CF3E10323C572B60041A30D /* Color.swift in Sources */,
+				5C92422B23C6129C0074E54A /* BaseCollectionViewCell.swift in Sources */,
 				5C92421023C4DDD60074E54A /* BaseViewController.swift in Sources */,
 				5CF3E10623C573490041A30D /* UIColor+Additions.swift in Sources */,
 				5C92421723C4E29C0074E54A /* AppRepository.swift in Sources */,
+				5C92422223C60DB60074E54A /* RefreshFooterView.swift in Sources */,
 				5C92421D23C4ED6F0074E54A /* DebugPrint.swift in Sources */,
 				5CF3E0FD23C56DB80041A30D /* ProductDetailViewModel.swift in Sources */,
 			);
