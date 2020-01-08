@@ -21,7 +21,9 @@ class Application {
   
   func setupInitialScreen() {
     let window = UIWindow(frame: UIScreen.main.bounds)
-    window.rootViewController = navigator.navigate(to: .productList)
+    window.rootViewController = BaseNavigationController(
+      rootViewController: navigator.navigate(to: .productList)
+    )
     window.backgroundColor = .white
     window.makeKeyAndVisible()
     self.window = window

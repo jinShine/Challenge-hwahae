@@ -27,6 +27,7 @@ class BaseNavigationController: UINavigationController {
   //MARK:- Methods
   
   private func setupUI() {
-    
+    navigationBar.shadowImage = UIImage()
+    navigationBar.isTranslucent = false
   }
 }
