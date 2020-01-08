@@ -54,5 +54,28 @@ class BaseViewController: UIViewController, Navigatable {
   func setupConstraints() { }
   
   func bind() { }
+
+  func setStatusBarViewBackground(_ color: UIColor) {
+    if #available(iOS 13.0, *) {
+      let app = UIApplication.shared
+      let statusBarHeight: CGFloat = app.statusBarFrame.size.height
+
+      let statusbarView = UIView()
+      statusbarView.backgroundColor = color
+      view.addSubview(statusbarView)
+
+      statusbarView.translatesAutoresizingMaskIntoConstraints = false
+      NSLayoutConstraint.activate([
+        statusbarView.heightAnchor.constraint(equalToConstant: statusBarHeight),
+        statusbarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        statusbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        statusbarView.topAnchor.constraint(equalTo: view.topAnchor)
+      ])
+
+    } else {
+      let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+      statusBar?.backgroundColor = color
+    }
+  }
   
 }
