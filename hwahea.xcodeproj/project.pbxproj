@@ -22,6 +22,12 @@
 		5C92421723C4E29C0074E54A /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92421623C4E29C0074E54A /* AppRepository.swift */; };
 		5C92421B23C4EB8C0074E54A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92421A23C4EB8C0074E54A /* BaseNavigationController.swift */; };
 		5C92421D23C4ED6F0074E54A /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92421C23C4ED6F0074E54A /* DebugPrint.swift */; };
+		5CF3E0FB23C56D480041A30D /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E0FA23C56D480041A30D /* ProductDetailViewController.swift */; };
+		5CF3E0FD23C56DB80041A30D /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E0FC23C56DB80041A30D /* ProductDetailViewModel.swift */; };
+		5CF3E10123C572A50041A30D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E10023C572A50041A30D /* Font.swift */; };
+		5CF3E10323C572B60041A30D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E10223C572B60041A30D /* Color.swift */; };
+		5CF3E10623C573490041A30D /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E10523C573490041A30D /* UIColor+Additions.swift */; };
+		5CF3E10823C575F20041A30D /* Application+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E10723C575F20041A30D /* Application+Theme.swift */; };
 		81DD4D051AAD1CB25C584A5B /* Pods_hwahea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10213DF1A03CAE662BEB0CC5 /* Pods_hwahea.framework */; };
 		CC19289F1A6A8325B020FE18 /* Pods_hwaheaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A56EBA3500BD9EAA2A9BB07 /* Pods_hwaheaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +73,12 @@
 		5C92421623C4E29C0074E54A /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
 		5C92421A23C4EB8C0074E54A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		5C92421C23C4ED6F0074E54A /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
+		5CF3E0FA23C56D480041A30D /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		5CF3E0FC23C56DB80041A30D /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		5CF3E10023C572A50041A30D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		5CF3E10223C572B60041A30D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5CF3E10523C573490041A30D /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		5CF3E10723C575F20041A30D /* Application+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+Theme.swift"; sourceTree = "<group>"; };
 		84A89468B25EA4027F0B98A6 /* Pods-hwaheaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hwaheaTests.release.xcconfig"; path = "Target Support Files/Pods-hwaheaTests/Pods-hwaheaTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA7C52D34201B06371E19D72 /* Pods-hwaheaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hwaheaTests.debug.xcconfig"; path = "Target Support Files/Pods-hwaheaTests/Pods-hwaheaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFD3FD0FC65D5533EE5FF87F /* Pods-hwahea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hwahea.debug.xcconfig"; path = "Target Support Files/Pods-hwahea/Pods-hwahea.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 			children = (
 				5C9241CE23C4CD940074E54A /* AppDelegate.swift */,
 				5C92420623C4D6CD0074E54A /* Application.swift */,
+				5CF3E10723C575F20041A30D /* Application+Theme.swift */,
 				5C92420823C4D7800074E54A /* Navigator.swift */,
 				5C92421523C4E24A0074E54A /* Repositories */,
 			);
@@ -196,7 +209,9 @@
 		5C92420223C4D3BD0074E54A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				5C92421C23C4ED6F0074E54A /* DebugPrint.swift */,
+				5CF3E10423C5732B0041A30D /* Extension */,
+				5CF3E0FF23C572970041A30D /* Debug */,
+				5CF3E0FE23C5728F0041A30D /* Theme */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -212,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				5C92420523C4D5840074E54A /* ProductList */,
+				5CF3E0F923C56D310041A30D /* ProductDetail */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -241,6 +257,40 @@
 				5C92421623C4E29C0074E54A /* AppRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5CF3E0F923C56D310041A30D /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3E0FA23C56D480041A30D /* ProductDetailViewController.swift */,
+				5CF3E0FC23C56DB80041A30D /* ProductDetailViewModel.swift */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		5CF3E0FE23C5728F0041A30D /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3E10023C572A50041A30D /* Font.swift */,
+				5CF3E10223C572B60041A30D /* Color.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		5CF3E0FF23C572970041A30D /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				5C92421C23C4ED6F0074E54A /* DebugPrint.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		5CF3E10423C5732B0041A30D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3E10523C573490041A30D /* UIColor+Additions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C579EC0CC65F89FF0BF3E89D /* Pods */ = {
@@ -490,12 +540,18 @@
 				5C9241CF23C4CD940074E54A /* AppDelegate.swift in Sources */,
 				5C92421223C4DF220074E54A /* BaseViewModel.swift in Sources */,
 				5C92420B23C4D89F0074E54A /* ProductListViewController.swift in Sources */,
+				5CF3E10823C575F20041A30D /* Application+Theme.swift in Sources */,
 				5C92420923C4D7800074E54A /* Navigator.swift in Sources */,
 				5C92421B23C4EB8C0074E54A /* BaseNavigationController.swift in Sources */,
 				5C92421423C4DF5E0074E54A /* ProductListViewModel.swift in Sources */,
+				5CF3E10123C572A50041A30D /* Font.swift in Sources */,
+				5CF3E0FB23C56D480041A30D /* ProductDetailViewController.swift in Sources */,
+				5CF3E10323C572B60041A30D /* Color.swift in Sources */,
 				5C92421023C4DDD60074E54A /* BaseViewController.swift in Sources */,
+				5CF3E10623C573490041A30D /* UIColor+Additions.swift in Sources */,
 				5C92421723C4E29C0074E54A /* AppRepository.swift in Sources */,
 				5C92421D23C4ED6F0074E54A /* DebugPrint.swift in Sources */,
+				5CF3E0FD23C56DB80041A30D /* ProductDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

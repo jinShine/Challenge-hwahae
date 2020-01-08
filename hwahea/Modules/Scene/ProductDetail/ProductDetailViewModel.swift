@@ -1,26 +1,26 @@
 //
-//  ProductListViewModel.swift
+//  ProductDetailViewModel.swift
 //  hwahea
 //
-//  Created by seungjin on 2020/01/08.
+//  Created by Seungjin on 08/01/2020.
 //  Copyright © 2020 Jinnify. All rights reserved.
 //
 
 import UIKit
 
-class ProductListViewModel: BaseViewModel {
+class ProductDetailViewModel: BaseViewModel {
 
   //MARK:- Cell Type
 
-//  enum CellType: Int {
-//  }
+  //  enum CellType: Int {
+  //  }
 
 
   //MARK:- Properties
 
 
   //MARK:- Init
-
+  
 
   //MARK:- Methods
 
