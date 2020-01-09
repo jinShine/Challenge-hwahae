@@ -30,6 +30,7 @@ final class ProductCell: BaseCollectionViewCell {
     imageView.layer.cornerRadius = UI.productImageRadius
     imageView.layer.borderColor = UI.productBorderColor
     imageView.layer.borderWidth = 1
+    imageView.backgroundColor = .brown
     return imageView
   }()
   

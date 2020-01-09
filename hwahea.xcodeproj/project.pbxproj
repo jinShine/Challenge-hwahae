@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4FD59055F0A53C7D3C0B9FCC /* Pods_hwaheaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1DC5CAFBB11CB96269B7F3 /* Pods_hwaheaTests.framework */; };
+		5C2A7F6C23C72F2900372C0A /* ProductListAdapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F6B23C72F2900372C0A /* ProductListAdapters.swift */; };
+		5C2A7F6F23C7316500372C0A /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F6E23C7316500372C0A /* Navigatable.swift */; };
+		5C2A7F7123C7319500372C0A /* Transitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F7023C7319500372C0A /* Transitioning.swift */; };
 		5C9241CF23C4CD940074E54A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9241CE23C4CD940074E54A /* AppDelegate.swift */; };
 		5C9241D823C4CD960074E54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9241D723C4CD960074E54A /* Assets.xcassets */; };
 		5C9241DB23C4CD960074E54A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9241D923C4CD960074E54A /* LaunchScreen.storyboard */; };
@@ -59,6 +62,9 @@
 		10213DF1A03CAE662BEB0CC5 /* Pods_hwahea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hwahea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		190E555A004F6D8F9B367A46 /* Pods-hwaheaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hwaheaUITests.release.xcconfig"; path = "Target Support Files/Pods-hwaheaUITests/Pods-hwaheaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A56EBA3500BD9EAA2A9BB07 /* Pods_hwaheaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hwaheaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2A7F6B23C72F2900372C0A /* ProductListAdapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListAdapters.swift; sourceTree = "<group>"; };
+		5C2A7F6E23C7316500372C0A /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
+		5C2A7F7023C7319500372C0A /* Transitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitioning.swift; sourceTree = "<group>"; };
 		5C9241CB23C4CD940074E54A /* hwahea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hwahea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9241CE23C4CD940074E54A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C9241D723C4CD960074E54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +135,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C2A7F6D23C7313900372C0A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5C92420823C4D7800074E54A /* Navigator.swift */,
+				5C2A7F6E23C7316500372C0A /* Navigatable.swift */,
+				5C2A7F7023C7319500372C0A /* Transitioning.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		5C9241C223C4CD940074E54A = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +204,7 @@
 				5C9241CE23C4CD940074E54A /* AppDelegate.swift */,
 				5C92420623C4D6CD0074E54A /* Application.swift */,
 				5CF3E10723C575F20041A30D /* Application+Theme.swift */,
-				5C92420823C4D7800074E54A /* Navigator.swift */,
+				5C2A7F6D23C7313900372C0A /* Coordinator */,
 				5C92421523C4E24A0074E54A /* Repositories */,
 			);
 			path = Core;
@@ -254,6 +270,7 @@
 				5C92420A23C4D89F0074E54A /* ProductListViewController.swift */,
 				5C92421323C4DF5E0074E54A /* ProductListViewModel.swift */,
 				5C92422C23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift */,
+				5C2A7F6B23C72F2900372C0A /* ProductListAdapters.swift */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -574,8 +591,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2A7F7123C7319500372C0A /* Transitioning.swift in Sources */,
 				5C92420723C4D6CD0074E54A /* Application.swift in Sources */,
 				5C92422D23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift in Sources */,
+				5C2A7F6F23C7316500372C0A /* Navigatable.swift in Sources */,
 				5CF3E10A23C59C6A0041A30D /* CALayer+Sketch.swift in Sources */,
 				5C9241CF23C4CD940074E54A /* AppDelegate.swift in Sources */,
 				5C92421223C4DF220074E54A /* BaseViewModel.swift in Sources */,
@@ -594,6 +613,7 @@
 				5CF3E10623C573490041A30D /* UIColor+Additions.swift in Sources */,
 				5C92421723C4E29C0074E54A /* AppRepository.swift in Sources */,
 				5C92422223C60DB60074E54A /* RefreshFooterView.swift in Sources */,
+				5C2A7F6C23C72F2900372C0A /* ProductListAdapters.swift in Sources */,
 				5C92421D23C4ED6F0074E54A /* DebugPrint.swift in Sources */,
 				5CF3E0FD23C56DB80041A30D /* ProductDetailViewModel.swift in Sources */,
 			);

@@ -105,9 +105,7 @@ class ProductListViewController: BaseViewController {
   }()
 
   //MARK:- Properties
-  var previousContentOffset: CGFloat = 0.0
-
-  //MARK:- Init
+  private var previousContentOffsetY: CGFloat = 0.0
 
 
   //MARK:- Life Cycle
@@ -126,7 +124,7 @@ class ProductListViewController: BaseViewController {
   override func setupUI() {
     navigationController?.isNavigationBarHidden = true
     self.setStatusBarViewBackground(Application.color.main)
-    [searchContainer, categoryHeaderView, collectionView].forEach { view.addSubview($0) }
+    [categoryHeaderView, searchContainer, collectionView].forEach { view.addSubview($0) }
     [searchBar].forEach { searchContainer.addSubview($0) }
     [categoryButton].forEach { categoryHeaderView.addSubview($0) }
   }
@@ -167,27 +165,40 @@ class ProductListViewController: BaseViewController {
 
   }
 
+  private func updateHeaderAnimation(by scrollView: UIScrollView) {
+    guard previousContentOffsetY >= 0 else {
+      previousContentOffsetY = 0.0
+      return
+    }
+
+    if previousContentOffsetY >= scrollView.contentOffset.y {
+      categoryHeaderView.alpha = 1
+      categoryHeaderView.snp.updateConstraints {
+        $0.top.equalTo(searchContainer.snp.bottom)
+      }
+      UIView.animate(withDuration: 0.35) {
+        self.view.layoutIfNeeded()
+      }
+    } else {
+      categoryHeaderView.alpha = 0
+      categoryHeaderView.snp.updateConstraints {
+        $0.top.equalTo(searchContainer.snp.bottom).offset(-UI.CategoryHeaderView.height)
+      }
+      UIView.animate(withDuration: 0.35) {
+        self.view.layoutIfNeeded()
+      }
+    }
+  }
+
 }
 
 extension ProductListViewController: UIScrollViewDelegate {
-  
+
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    print(scrollView)
-    let currentOffset = scrollView.contentOffset.y - previousContentOffset
-    if currentOffset > previousContentOffset {
-      categoryHeaderView.snp.updateConstraints {
-        $0.height.equalTo(50)
-      }
-      
-    } else if currentOffset < previousContentOffset {
-        categoryHeaderView.snp.updateConstraints {
-          $0.height.equalTo(0)
-        }
-    }
-    previousContentOffset = scrollView.contentOffset.y
+    updateHeaderAnimation(by: scrollView)
   }
-  
-  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    previousContentOffset = scrollView.contentOffset.y
+
+  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    previousContentOffsetY = scrollView.contentOffset.y
   }
 }

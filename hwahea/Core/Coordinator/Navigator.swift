@@ -8,16 +8,12 @@
 
 import UIKit
 
-protocol Navigatable {
-  var navigator: Navigator? { get set }
+enum Scene {
+  case productList
+  case productDetail
 }
 
 class Navigator {
-  
-  enum Scene {
-    case productList
-    case productDetail
-  }
 
   func navigate(to scene: Scene) -> UIViewController {
     switch scene {
