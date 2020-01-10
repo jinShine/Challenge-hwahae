@@ -11,6 +11,10 @@
 		5C2A7F6C23C72F2900372C0A /* ProductListAdapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F6B23C72F2900372C0A /* ProductListAdapters.swift */; };
 		5C2A7F6F23C7316500372C0A /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F6E23C7316500372C0A /* Navigatable.swift */; };
 		5C2A7F7123C7319500372C0A /* Transitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F7023C7319500372C0A /* Transitioning.swift */; };
+		5C2A7F9823C8493D00372C0A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F9723C8493D00372C0A /* NetworkService.swift */; };
+		5C2A7F9A23C849ED00372C0A /* hwaheaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F9923C849ED00372C0A /* hwaheaRouter.swift */; };
+		5C2A7F9C23C8551700372C0A /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F9B23C8551700372C0A /* CategoryHeaderView.swift */; };
+		5C2A7F9E23C868B100372C0A /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F9D23C868B100372C0A /* UIViewController+Alerts.swift */; };
 		5C9241CF23C4CD940074E54A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9241CE23C4CD940074E54A /* AppDelegate.swift */; };
 		5C9241D823C4CD960074E54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9241D723C4CD960074E54A /* Assets.xcassets */; };
 		5C9241DB23C4CD960074E54A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9241D923C4CD960074E54A /* LaunchScreen.storyboard */; };
@@ -65,6 +69,10 @@
 		5C2A7F6B23C72F2900372C0A /* ProductListAdapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListAdapters.swift; sourceTree = "<group>"; };
 		5C2A7F6E23C7316500372C0A /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		5C2A7F7023C7319500372C0A /* Transitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitioning.swift; sourceTree = "<group>"; };
+		5C2A7F9723C8493D00372C0A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5C2A7F9923C849ED00372C0A /* hwaheaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hwaheaRouter.swift; sourceTree = "<group>"; };
+		5C2A7F9B23C8551700372C0A /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
+		5C2A7F9D23C868B100372C0A /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		5C9241CB23C4CD940074E54A /* hwahea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hwahea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9241CE23C4CD940074E54A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C9241D723C4CD960074E54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +153,15 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		5C2A7F9623C848EF00372C0A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5C2A7F9723C8493D00372C0A /* NetworkService.swift */,
+				5C2A7F9923C849ED00372C0A /* hwaheaRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		5C9241C223C4CD940074E54A = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +223,7 @@
 				5CF3E10723C575F20041A30D /* Application+Theme.swift */,
 				5C2A7F6D23C7313900372C0A /* Coordinator */,
 				5C92421523C4E24A0074E54A /* Repositories */,
+				5C2A7F9623C848EF00372C0A /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -283,6 +301,7 @@
 				5C92421A23C4EB8C0074E54A /* BaseNavigationController.swift */,
 				5C92422123C60DB60074E54A /* RefreshFooterView.swift */,
 				5C92422A23C6129C0074E54A /* BaseCollectionViewCell.swift */,
+				5C2A7F9B23C8551700372C0A /* CategoryHeaderView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -344,6 +363,7 @@
 				5CF3E10523C573490041A30D /* UIColor+Additions.swift */,
 				5CF3E10923C59C6A0041A30D /* CALayer+Sketch.swift */,
 				5C92422323C60F230074E54A /* UIView+Additions.swift */,
+				5C2A7F9D23C868B100372C0A /* UIViewController+Alerts.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -603,6 +623,7 @@
 				5CF3E10823C575F20041A30D /* Application+Theme.swift in Sources */,
 				5C92420923C4D7800074E54A /* Navigator.swift in Sources */,
 				5C92421B23C4EB8C0074E54A /* BaseNavigationController.swift in Sources */,
+				5C2A7F9E23C868B100372C0A /* UIViewController+Alerts.swift in Sources */,
 				5C92421423C4DF5E0074E54A /* ProductListViewModel.swift in Sources */,
 				5CF3E10123C572A50041A30D /* Font.swift in Sources */,
 				5C92422923C612590074E54A /* ProductCell.swift in Sources */,
@@ -612,9 +633,12 @@
 				5C92421023C4DDD60074E54A /* BaseViewController.swift in Sources */,
 				5CF3E10623C573490041A30D /* UIColor+Additions.swift in Sources */,
 				5C92421723C4E29C0074E54A /* AppRepository.swift in Sources */,
+				5C2A7F9C23C8551700372C0A /* CategoryHeaderView.swift in Sources */,
 				5C92422223C60DB60074E54A /* RefreshFooterView.swift in Sources */,
 				5C2A7F6C23C72F2900372C0A /* ProductListAdapters.swift in Sources */,
 				5C92421D23C4ED6F0074E54A /* DebugPrint.swift in Sources */,
+				5C2A7F9A23C849ED00372C0A /* hwaheaRouter.swift in Sources */,
+				5C2A7F9823C8493D00372C0A /* NetworkService.swift in Sources */,
 				5CF3E0FD23C56DB80041A30D /* ProductDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

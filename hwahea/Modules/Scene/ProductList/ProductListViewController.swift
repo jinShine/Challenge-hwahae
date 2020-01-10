@@ -65,23 +65,25 @@ class ProductListViewController: BaseViewController {
     return searchBar
   }()
   
-  let categoryHeaderView: UIView = {
-    let view = UIView()
-    view.backgroundColor = .white
-    view.layer.borderColor = UI.CategoryHeaderView.borderColor
-    view.layer.borderWidth = 1
-    return view
-  }()
+  let categoryHeaderView = CategoryHeaderView()
+
+//  let categoryHeaderView: UIView = {
+//    let view = UIView()
+//    view.backgroundColor = .white
+//    view.layer.borderColor = UI.CategoryHeaderView.borderColor
+//    view.layer.borderWidth = 1
+//    return view
+//  }()
   
-  let categoryButton: UIButton = {
-    let button = UIButton()
-    button.setTitle("모든 피부 타입", for: .normal)
-    button.setTitleColor(.black, for: .normal)
-    button.setImage(UIImage(named: "arrowDown"), for: .normal)
-    button.semanticContentAttribute = .forceRightToLeft
-    button.titleLabel?.font = Application.font.appleSDGothicNeoBold(size: 14)
-    return button
-  }()
+//  let categoryButton: UIButton = {
+//    let button = UIButton()
+//    button.setTitle("모든 피부 타입", for: .normal)
+//    button.setTitleColor(.black, for: .normal)
+//    button.setImage(UIImage(named: "arrowDown"), for: .normal)
+//    button.semanticContentAttribute = .forceRightToLeft
+//    button.titleLabel?.font = Application.font.appleSDGothicNeoBold(size: 14)
+//    return button
+//  }()
   
   lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -126,7 +128,6 @@ class ProductListViewController: BaseViewController {
     self.setStatusBarViewBackground(Application.color.main)
     [categoryHeaderView, searchContainer, collectionView].forEach { view.addSubview($0) }
     [searchBar].forEach { searchContainer.addSubview($0) }
-    [categoryButton].forEach { categoryHeaderView.addSubview($0) }
   }
 
   override func setupConstraints() {
@@ -148,13 +149,7 @@ class ProductListViewController: BaseViewController {
       $0.leading.trailing.equalToSuperview()
       $0.height.equalTo(UI.CategoryHeaderView.height)
     }
-    
-    categoryButton.snp.makeConstraints {
-      $0.leading.greaterThanOrEqualToSuperview()
-      $0.trailing.equalToSuperview().offset(-UI.CategoryHeaderView.margin)
-      $0.centerY.equalToSuperview()
-    }
-    
+
     collectionView.snp.makeConstraints {
       $0.top.equalTo(categoryHeaderView.snp.bottom)
       $0.leading.trailing.bottom.equalToSuperview()
@@ -162,8 +157,20 @@ class ProductListViewController: BaseViewController {
   }
 
   override func bind() {
-
+    categoryHeaderView.skinTypeDidChange = {
+      print($0, $1)
+      self.showAlert(title: "필터", message: "피부 타입", options: [[
+        "지성" : UIAlertAction.Style.default,
+        "건성" : UIAlertAction.Style.default,
+        "민감성" : UIAlertAction.Style.default,
+      ]], preferredStyle: .actionSheet, handler: nil)
+    }
   }
+
+}
+
+//MARK:- ScrollView delegate
+extension ProductListViewController: UIScrollViewDelegate {
 
   private func updateHeaderAnimation(by scrollView: UIScrollView) {
     guard previousContentOffsetY >= 0 else {
@@ -189,10 +196,6 @@ class ProductListViewController: BaseViewController {
       }
     }
   }
-
-}
-
-extension ProductListViewController: UIScrollViewDelegate {
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     updateHeaderAnimation(by: scrollView)
