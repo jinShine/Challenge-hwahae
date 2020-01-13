@@ -44,6 +44,7 @@ class ProductListViewController: BaseViewController {
   }
 
   //MARK:- UI Properties
+
   var refreshFooterView: RefreshFooterView?
   
   let searchContainer: UIView = {
@@ -89,8 +90,24 @@ class ProductListViewController: BaseViewController {
   }()
 
   //MARK:- Properties
+
+  var viewModel: ProductListViewModel
+  var navigator: Navigator
   private var previousContentOffsetY: CGFloat = 0.0
 
+
+  //MARK:- Initialize
+
+  init(viewModel: ProductListViewModel, navigator: Navigator) {
+    self.viewModel = viewModel
+    self.navigator = navigator
+
+    super.init()
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 
   //MARK:- Life Cycle
 
@@ -140,6 +157,24 @@ class ProductListViewController: BaseViewController {
 
   override func bind() {
 
+    update()
+    didTapSkinType()
+
+  }
+
+  private func update(with type: String = CategoryHeaderView.SkinType.oily.rawValue) {
+    viewModel.updateProduct(skinType: CategoryHeaderView.SkinType.transform(to: type), page: viewModel.page, completion: { [weak self] response in
+
+      guard response.result == .success else {
+        self?.showAlert(title: "에러", message: response.error?.message)
+        return
+      }
+
+      self?.reload()
+    })
+  }
+
+  private func didTapSkinType() {
     categoryHeaderView.skinTypeDidChange = { [weak self] _ in
       self?.showAlert(title: "필터", message: "피부 타입", options: [[
         CategoryHeaderView.SkinType.oily.rawValue : UIAlertAction.Style.default,
@@ -147,11 +182,18 @@ class ProductListViewController: BaseViewController {
         CategoryHeaderView.SkinType.sensitive.rawValue : UIAlertAction.Style.default,
         "취소" : UIAlertAction.Style.cancel,
         ]], preferredStyle: .alert, handler: { action in
-          guard action.title != "취소" else { return }
-          //통신 로직
+          guard let type = action.title, type != "취소" else { return }
+          self?.update(with: type)
       })
     }
   }
+
+  private func reload() {
+    DispatchQueue.main.async { [weak self] in
+      self?.collectionView.reloadData()
+    }
+  }
+
 
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class BaseViewController: UIViewController, Navigatable {
+class BaseViewController: UIViewController {
   
   //MARK:- Constant
   
@@ -19,14 +19,10 @@ class BaseViewController: UIViewController, Navigatable {
   
   //MARK:- Properties
   
-  var viewModel: BaseViewModel?
-  var navigator: Navigator?
-  
+
   //MARK:- Initialize
   
-  init(viewModel: BaseViewModel, navigator: Navigator) {
-    self.viewModel = viewModel
-    self.navigator = navigator
+  init() {
     super.init(nibName: nil, bundle: nil)
   }
   

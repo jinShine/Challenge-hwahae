@@ -13,19 +13,18 @@ import UIKit
 extension ProductListViewController: UICollectionViewDataSource {
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return 1
+    return viewModel.numberOfSections()
   }
   
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
-    return 30
+    return viewModel.numberOfItemsSection()
   }
   
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseIdentifier, for: indexPath)
-    
-    return cell
+
+    return configureCell(collectionView: collectionView, indexPath: indexPath)
   }
   
   func collectionView(_ collectionView: UICollectionView,
@@ -83,4 +82,22 @@ extension ProductListViewController: UICollectionViewDelegateFlowLayout {
     return UI.CollectionView.lineSpacing
   }
   
+}
+
+//MARK:- CollectionView decorator
+extension ProductListViewController: CollectionViewDecorator {
+
+  func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+
+    switch ProductListViewModel.CellType(rawValue: indexPath.row) {
+    case .product:
+      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseIdentifier, for: indexPath) as? ProductCell else {
+        return UICollectionViewCell()
+      }
+
+      return cell
+    default:
+      return UICollectionViewCell()
+    }
+  }
 }

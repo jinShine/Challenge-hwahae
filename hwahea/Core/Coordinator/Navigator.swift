@@ -16,9 +16,12 @@ enum Scene {
 class Navigator {
 
   func navigate(to scene: Scene) -> UIViewController {
+
+    let service = Application.shared.service
+
     switch scene {
     case .productList:
-      let viewModel = ProductListViewModel()
+      let viewModel = ProductListViewModel(productListInteractor: ProductListInteractor(service: service))
       let viewController = ProductListViewController(viewModel: viewModel, navigator: self)
       return viewController
     case .productDetail:

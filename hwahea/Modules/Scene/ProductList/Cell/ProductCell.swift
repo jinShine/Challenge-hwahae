@@ -52,7 +52,9 @@ final class ProductCell: BaseCollectionViewCell {
   
   
   //MARK:- Properties
-  
+
+  var viewModel: ProductCellViewModel
+
 //  var viewModel: ProductCellViewModel! {
 //    didSet {
 //      let imageURL = URL(string: viewModel.productImage)
@@ -64,17 +66,17 @@ final class ProductCell: BaseCollectionViewCell {
   
   
   //MARK:- Life Cycle
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
 
+  init(viewModel: ProductCellViewModel) {
+    self.viewModel = viewModel
+
+    super.init(frame: .zero)
   }
-  
+
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
-  
+
   //MARK:- Methods
   
   override func setupUI() {

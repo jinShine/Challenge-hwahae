@@ -8,44 +8,49 @@
 
 import Moya
 
-//enum hwaheaRouter {
-//  case productList(skinType: Int, page: Int)
-//}
-//
-//extension hwaheaRouter: TargetType {
-//
-//  var baseURL: URL {
-//    return URL(string: "https://6uqljnm1pb.execute-api.ap-northeast-2.amazonaws.com/prod")!
-//  }
-//
-//  var path: String {
-//    switch self {
-//    case .productList:
-//      return "/products"
-//    }
-//  }
-//
-//  var method: Method {
-//    switch self {
-//    case .productList:
-//      return .get
-//    }
-//  }
-//
-//  var sampleData: Data {
-//    return "data".data(using: String.Encoding.utf8)!
-//  }
-//
-//  var task: Task {
-//    switch self {
-//    case .productList:
-//      case
-//    }
-//  }
-//
-//  var headers: [String : String]? {
-//
-//  }
-//
-//
-//}
+enum hwaheaRouter {
+  case productList(skinType: String, page: Int)
+}
+
+extension hwaheaRouter: TargetType {
+
+  var baseURL: URL {
+    return URL(string: "https://6uqljnm1pb.execute-api.ap-northeast-2.amazonaws.com/prod")!
+  }
+
+  var path: String {
+    switch self {
+    case .productList:
+      return "/products"
+    }
+  }
+
+  var method: Method {
+    switch self {
+    case .productList:
+      return .get
+    }
+  }
+
+  var sampleData: Data {
+    return "data".data(using: String.Encoding.utf8)!
+  }
+
+  var task: Task {
+    switch self {
+    case .productList(let skinType, let page):
+      return .requestParameters(parameters: [
+        "skin_type" : skinType,
+        "page" : page
+      ], encoding: URLEncoding.queryString)
+    }
+  }
+
+  var headers: [String : String]? {
+    return [
+      "Content-Type" : "application/json",
+      "token" : "7a43448128eafa0f094e33e421a3158a"
+    ]
+  }
+
+}

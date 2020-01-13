@@ -15,6 +15,15 @@ class CategoryHeaderView: UIView {
     case oily = "지성",
     dry = "건성",
     sensitive = "민감성"
+
+    static func transform(to type: String) -> String {
+      switch type {
+      case self.oily.rawValue: return "oily"
+      case self.dry.rawValue: return "dry"
+      case self.sensitive.rawValue: return "sensitive"
+      default: return "none"
+      }
+    }
   }
 
   //MARK:- Constant

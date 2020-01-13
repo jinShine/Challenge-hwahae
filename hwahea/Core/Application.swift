@@ -13,10 +13,12 @@ class Application {
   var window: UIWindow?
   var navigator: Navigator
   let repository: AppRepository
+  let service: NetworkService
   
   private init() {
     self.navigator = Navigator()
     self.repository = AppRepository()
+    self.service = NetworkService()
   }
   
   func setupInitialScreen() {
