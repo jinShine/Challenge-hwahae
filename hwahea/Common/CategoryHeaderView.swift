@@ -11,10 +11,10 @@ import SnapKit
 
 class CategoryHeaderView: UIView {
 
-  enum SkinType {
-    case oily,
-    dry,
-    sensitive
+  enum SkinType: String {
+    case oily = "지성",
+    dry = "건성",
+    sensitive = "민감성"
   }
 
   //MARK:- Constant
@@ -40,7 +40,7 @@ class CategoryHeaderView: UIView {
 
   //MARK:- UI Properties
 
-  var skinTypeDidChange: ((UIButton, SkinType) -> Void)?
+  var skinTypeDidChange: ((UIButton) -> Void)?
 
 
   //MARK:- Initialize
@@ -76,8 +76,7 @@ class CategoryHeaderView: UIView {
 
   @objc
   func didTap() {
-    skinTypeDidChange?(categoryButton, SkinType.oily)
+    skinTypeDidChange?(categoryButton)
   }
-
 
 }

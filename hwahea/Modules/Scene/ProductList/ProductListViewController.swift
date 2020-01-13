@@ -66,24 +66,6 @@ class ProductListViewController: BaseViewController {
   }()
   
   let categoryHeaderView = CategoryHeaderView()
-
-//  let categoryHeaderView: UIView = {
-//    let view = UIView()
-//    view.backgroundColor = .white
-//    view.layer.borderColor = UI.CategoryHeaderView.borderColor
-//    view.layer.borderWidth = 1
-//    return view
-//  }()
-  
-//  let categoryButton: UIButton = {
-//    let button = UIButton()
-//    button.setTitle("모든 피부 타입", for: .normal)
-//    button.setTitleColor(.black, for: .normal)
-//    button.setImage(UIImage(named: "arrowDown"), for: .normal)
-//    button.semanticContentAttribute = .forceRightToLeft
-//    button.titleLabel?.font = Application.font.appleSDGothicNeoBold(size: 14)
-//    return button
-//  }()
   
   lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -157,13 +139,17 @@ class ProductListViewController: BaseViewController {
   }
 
   override func bind() {
-    categoryHeaderView.skinTypeDidChange = {
-      print($0, $1)
-      self.showAlert(title: "필터", message: "피부 타입", options: [[
-        "지성" : UIAlertAction.Style.default,
-        "건성" : UIAlertAction.Style.default,
-        "민감성" : UIAlertAction.Style.default,
-      ]], preferredStyle: .actionSheet, handler: nil)
+
+    categoryHeaderView.skinTypeDidChange = { [weak self] _ in
+      self?.showAlert(title: "필터", message: "피부 타입", options: [[
+        CategoryHeaderView.SkinType.oily.rawValue : UIAlertAction.Style.default,
+        CategoryHeaderView.SkinType.dry.rawValue : UIAlertAction.Style.default,
+        CategoryHeaderView.SkinType.sensitive.rawValue : UIAlertAction.Style.default,
+        "취소" : UIAlertAction.Style.cancel,
+        ]], preferredStyle: .alert, handler: { action in
+          guard action.title != "취소" else { return }
+          //통신 로직
+      })
     }
   }
 
