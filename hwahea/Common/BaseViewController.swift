@@ -14,9 +14,20 @@ class BaseViewController: UIViewController {
   //MARK:- Constant
   
   struct UI {
-    
+
   }
-  
+
+  //MARK:- UI Properties
+  let spinnerView: UIActivityIndicatorView = {
+    let spinner = UIActivityIndicatorView()
+    if #available(iOS 13, *) {
+      spinner.style = .medium
+    } else {
+      spinner.style = .gray
+    }
+    return spinner
+  }()
+
   //MARK:- Properties
   
 
@@ -46,9 +57,14 @@ class BaseViewController: UIViewController {
   
   //MARK:- Methods
   
-  func setupUI() { }
+  func setupUI() {
+    Application.shared.window?.addSubview(spinnerView)
+    Application.shared.window?.bringSubviewToFront(spinnerView)
+  }
   
-  func setupConstraints() { }
+  func setupConstraints() {
+    spinnerView.center = Application.shared.window?.center ?? CGPoint.zero
+  }
   
   func bind() { }
 
@@ -68,7 +84,6 @@ class BaseViewController: UIViewController {
         statusbarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         statusbarView.topAnchor.constraint(equalTo: view.topAnchor)
       ])
-
     } else {
       let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
       statusBar?.backgroundColor = color
