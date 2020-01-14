@@ -20,7 +20,7 @@ extension ProductListViewController: UICollectionViewDataSource {
                       numberOfItemsInSection section: Int) -> Int {
     return viewModel.numberOfItemsSection()
   }
-  
+
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
@@ -34,11 +34,11 @@ extension ProductListViewController: UICollectionViewDataSource {
     case UICollectionView.elementKindSectionHeader:
       return UICollectionViewCell()
     case UICollectionView.elementKindSectionFooter:
-      let footer = collectionView.dequeueReusableSupplementaryView(
+      guard let footer = collectionView.dequeueReusableSupplementaryView(
         ofKind: UICollectionView.elementKindSectionFooter,
         withReuseIdentifier: RefreshFooterView.reuseIdentifier,
         for: indexPath
-      ) as! RefreshFooterView
+        ) as? RefreshFooterView else { return UICollectionReusableView() }
       refreshFooterView = footer
       
       return footer
@@ -89,11 +89,16 @@ extension ProductListViewController: CollectionViewDecorator {
 
   func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
 
-    switch ProductListViewModel.CellType(rawValue: indexPath.row) {
+    switch ProductListViewModel.CellType(rawValue: indexPath.section) {
     case .product:
-      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseIdentifier, for: indexPath) as? ProductCell else {
-        return UICollectionViewCell()
+      guard let cell = collectionView.dequeueReusableCell(
+        withReuseIdentifier: ProductCell.reuseIdentifier, for: indexPath
+        ) as? ProductCell else {
+          return UICollectionViewCell()
       }
+
+      let product = viewModel.products[indexPath.row]
+      cell.viewModel = ProductCellViewModel(product: product)
 
       return cell
     default:

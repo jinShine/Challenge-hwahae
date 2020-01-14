@@ -42,6 +42,8 @@
 		5C92422D23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92422C23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift */; };
 		5CB951A323CC7203004DEA84 /* CollectionViewDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB951A223CC7203004DEA84 /* CollectionViewDecorator.swift */; };
 		5CB951A523CC74B5004DEA84 /* ProductCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB951A423CC74B5004DEA84 /* ProductCellViewModel.swift */; };
+		5CB951A623CD831E004DEA84 /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C92421F23C606F00074E54A /* NotoSansCJKkr-Black.otf */; };
+		5CB951A723CD8321004DEA84 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C92422023C606F20074E54A /* NotoSansCJKkr-Bold.otf */; };
 		5CF3E0FB23C56D480041A30D /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E0FA23C56D480041A30D /* ProductDetailViewController.swift */; };
 		5CF3E0FD23C56DB80041A30D /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E0FC23C56DB80041A30D /* ProductDetailViewModel.swift */; };
 		5CF3E10123C572A50041A30D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E10023C572A50041A30D /* Font.swift */; };
@@ -524,7 +526,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9241DB23C4CD960074E54A /* LaunchScreen.storyboard in Resources */,
+				5CB951A723CD8321004DEA84 /* NotoSansCJKkr-Bold.otf in Resources */,
 				5C9241D823C4CD960074E54A /* Assets.xcassets in Resources */,
+				5CB951A623CD831E004DEA84 /* NotoSansCJKkr-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

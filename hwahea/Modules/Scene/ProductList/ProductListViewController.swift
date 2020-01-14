@@ -91,9 +91,9 @@ class ProductListViewController: BaseViewController {
 
   //MARK:- Properties
 
+  private var previousContentOffsetY: CGFloat = 0.0
   var viewModel: ProductListViewModel
   var navigator: Navigator
-  private var previousContentOffsetY: CGFloat = 0.0
 
 
   //MARK:- Initialize
@@ -123,6 +123,8 @@ class ProductListViewController: BaseViewController {
   }
 
   override func setupUI() {
+    super.setupUI()
+
     navigationController?.isNavigationBarHidden = true
     self.setStatusBarViewBackground(Application.color.main)
     [categoryHeaderView, searchContainer, collectionView].forEach { view.addSubview($0) }
@@ -130,8 +132,15 @@ class ProductListViewController: BaseViewController {
   }
 
   override func setupConstraints() {
+    super.setupConstraints()
+
     searchContainer.snp.makeConstraints {
-      $0.top.equalToSuperview().offset(UIApplication.shared.statusBarFrame.height)
+      let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+      if #available(iOS 13.0, *) {
+        $0.top.equalToSuperview().offset(window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0)
+      } else {
+        $0.top.equalToSuperview().offset(UIApplication.shared.statusBarFrame.height)
+      }
       $0.leading.trailing.equalToSuperview()
       $0.height.equalTo(UI.SearchContainer.height)
     }
@@ -156,20 +165,19 @@ class ProductListViewController: BaseViewController {
   }
 
   override func bind() {
-
     update()
     didTapSkinType()
-
   }
 
   private func update(with type: String = CategoryHeaderView.SkinType.oily.rawValue) {
+    self.spinnerView.startAnimating()
     viewModel.updateProduct(skinType: CategoryHeaderView.SkinType.transform(to: type), page: viewModel.page, completion: { [weak self] response in
-
+      self?.spinnerView.stopAnimating()
       guard response.result == .success else {
         self?.showAlert(title: "에러", message: response.error?.message)
         return
       }
-
+      DLog(response)
       self?.reload()
     })
   }
@@ -181,7 +189,7 @@ class ProductListViewController: BaseViewController {
         CategoryHeaderView.SkinType.dry.rawValue : UIAlertAction.Style.default,
         CategoryHeaderView.SkinType.sensitive.rawValue : UIAlertAction.Style.default,
         "취소" : UIAlertAction.Style.cancel,
-        ]], preferredStyle: .alert, handler: { action in
+        ]], preferredStyle: .actionSheet, handler: { action in
           guard let type = action.title, type != "취소" else { return }
           self?.update(with: type)
       })
@@ -193,7 +201,6 @@ class ProductListViewController: BaseViewController {
       self?.collectionView.reloadData()
     }
   }
-
 
 }
 

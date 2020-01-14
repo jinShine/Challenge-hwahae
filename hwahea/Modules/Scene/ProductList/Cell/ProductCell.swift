@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ProductCell: BaseCollectionViewCell {
   
@@ -23,14 +24,13 @@ final class ProductCell: BaseCollectionViewCell {
   
   //MARK:- UI Properties
   
-  let productImageView: UIImageView = {
+  let productImage: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = true
     imageView.layer.cornerRadius = UI.productImageRadius
     imageView.layer.borderColor = UI.productBorderColor
     imageView.layer.borderWidth = 1
-    imageView.backgroundColor = .brown
     return imageView
   }()
   
@@ -42,7 +42,7 @@ final class ProductCell: BaseCollectionViewCell {
     return label
   }()
   
-  let sellerLabel: UILabel = {
+  let priceLabel: UILabel = {
     let label = UILabel()
     label.numberOfLines = 1
     label.font = Application.font.notoSansBold(size: 14)
@@ -53,53 +53,35 @@ final class ProductCell: BaseCollectionViewCell {
   
   //MARK:- Properties
 
-  var viewModel: ProductCellViewModel
-
-//  var viewModel: ProductCellViewModel! {
-//    didSet {
-//      let imageURL = URL(string: viewModel.productImage)
-//      productImageView.kf.setImage(with: imageURL)
-//      titleLabel.text = viewModel.title
-//      sellerLabel.text = viewModel.seller
-//    }
-//  }
-  
-  
-  //MARK:- Life Cycle
-
-  init(viewModel: ProductCellViewModel) {
-    self.viewModel = viewModel
-
-    super.init(frame: .zero)
-  }
-
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+  var viewModel: ProductCellViewModel? {
+    didSet {
+      configureView()
+    }
   }
 
   //MARK:- Methods
   
   override func setupUI() {
-    [productImageView, titleLabel, sellerLabel].forEach {
+    [productImage, titleLabel, priceLabel].forEach {
       contentView.addSubview($0)
     }
   }
   
   override func setupConstraints() {
     
-    productImageView.snp.makeConstraints {
+    productImage.snp.makeConstraints {
       $0.top.leading.trailing.equalToSuperview()
-      $0.height.equalTo(productImageView.snp.width)
+      $0.height.equalTo(productImage.snp.width)
     }
 
     titleLabel.snp.makeConstraints {
-      $0.top.equalTo(productImageView.snp.bottom).offset(UI.titleTopMargin)
-      $0.leading.equalTo(productImageView).offset(UI.titleLeftMargin)
-      $0.trailing.equalTo(productImageView).offset(UI.titleRightMargin)
+      $0.top.equalTo(productImage.snp.bottom).offset(UI.titleTopMargin)
+      $0.leading.equalTo(productImage).offset(UI.titleLeftMargin)
+      $0.trailing.equalTo(productImage).offset(UI.titleRightMargin)
       $0.height.greaterThanOrEqualTo(UI.sellerHeight)
     }
     
-    sellerLabel.snp.makeConstraints {
+    priceLabel.snp.makeConstraints {
       $0.top.equalTo(titleLabel.snp.bottom)
       $0.leading.equalTo(titleLabel)
       $0.trailing.equalTo(titleLabel)
@@ -107,6 +89,13 @@ final class ProductCell: BaseCollectionViewCell {
       $0.height.equalTo(UI.sellerHeight)
     }
 
+  }
+
+  private func configureView() {
+    guard let viewModel = viewModel else { return }
+    productImage.kf.setImage(with: viewModel.productImageURL)
+    titleLabel.text = viewModel.titleInfo
+    priceLabel.text = viewModel.priceInfo
   }
   
 }

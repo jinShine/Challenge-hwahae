@@ -31,14 +31,16 @@ class ProductListViewModel: BaseViewModel {
 
   //MARK:- Methods
 
-  func updateProduct(skinType: String = "oliy", page: Int = 1, completion: @escaping ((NetworkDataResponse) -> Void)) {
-    self.productListInteractor.fetchProduct(skinType: skinType, page: page) { response in
+  func updateProduct(skinType: String = "oliy",
+                     page: Int = 1,
+                     completion: @escaping ((NetworkDataResponse) -> Void)) {
+    self.productListInteractor.fetchProduct(skinType: skinType, page: page) { [weak self] response in
       guard let product = response.json as? ProductList else {
         completion(response)
         return
       }
-
-      product.body.forEach { self.products.append($0) }
+      self?.products.removeAll(keepingCapacity: true)
+      product.body.forEach { self?.products.append($0) }
       completion(response)
     }
   }
