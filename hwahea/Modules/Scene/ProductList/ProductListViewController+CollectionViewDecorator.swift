@@ -13,11 +13,13 @@ import UIKit
 extension ProductListViewController: UICollectionViewDataSource {
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
+
     return viewModel.numberOfSections()
   }
   
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
+
     return viewModel.numberOfItemsSection()
   }
 
@@ -51,7 +53,24 @@ extension ProductListViewController: UICollectionViewDataSource {
 //MARK:- CollectionView delegate
 
 extension ProductListViewController: UICollectionViewDelegate {
-  
+
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+  }
+
+  func collectionView(_ collectionView: UICollectionView,
+                      willDisplay cell: UICollectionViewCell,
+                      forItemAt indexPath: IndexPath) {
+    viewModel.loadMore(at: indexPath) { [weak self] response in
+      self?.refreshFooterView?.endRefreshing()
+      guard response.result == .success else {
+        DLog(response.error?.message)
+        return
+      }
+
+      self?.reload()
+    }
+  }
 }
 
 extension ProductListViewController: UICollectionViewDelegateFlowLayout {

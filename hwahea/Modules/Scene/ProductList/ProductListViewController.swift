@@ -173,12 +173,16 @@ class ProductListViewController: BaseViewController {
 
   private func update(with type: SkinType = SkinType.oily) {
     self.spinnerView.startAnimating()
+    self.viewModel.removeAllProducts()
+
     viewModel.updateProduct(skinType: SkinType.transform(to: type), page: viewModel.page, completion: { [weak self] response in
       self?.spinnerView.stopAnimating()
+
       guard response.result == .success else {
         self?.showAlert(title: "에러", message: response.error?.message)
         return
       }
+
       DLog(response)
       self?.reload()
     })
@@ -196,14 +200,15 @@ class ProductListViewController: BaseViewController {
         ]], preferredStyle: .actionSheet, handler: { action in
           guard let title = action.title, title != "취소",
           let type = SkinType(rawValue: title) else { return }
-          self.viewModel.skinType = type
-          self.update(with: self.viewModel.skinType)
+          self.viewModel.currentSkinType = type
+          self.update(with: self.viewModel.currentSkinType)
       })
     }
   }
 
   private func search(with type: SkinType = SkinType.oily, keyword: String) {
     self.spinnerView.startAnimating()
+
     viewModel.searchProduct(skinType: SkinType.transform(to: type), keyword: keyword) { [weak self] response in
       self?.spinnerView.stopAnimating()
       self?.dismissKeyboard()
@@ -216,7 +221,8 @@ class ProductListViewController: BaseViewController {
     }
   }
 
-  private func reload() {
+  func reload() {
+    self.refreshFooterView?.startRefreshing()
     DispatchQueue.main.async { [weak self] in
       self?.collectionView.reloadData()
     }
@@ -229,6 +235,7 @@ class ProductListViewController: BaseViewController {
 }
 
 //MARK:- ScrollView delegate
+
 extension ProductListViewController: UIScrollViewDelegate {
 
   private func updateHeaderAnimation(by scrollView: UIScrollView) {
@@ -266,9 +273,11 @@ extension ProductListViewController: UIScrollViewDelegate {
 }
 
 //MARK:- Search delegate
+
 extension ProductListViewController: UISearchBarDelegate {
+
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    search(with: viewModel.skinType, keyword: searchBar.text!)
+    search(with: viewModel.currentSkinType, keyword: searchBar.text ?? "")
     dismissKeyboard()
   }
 }
