@@ -10,6 +10,7 @@ import Moya
 
 enum hwaheaRouter {
   case productList(skinType: String, page: Int)
+  case productSearch(skinType: String, keyword: String)
 }
 
 extension hwaheaRouter: TargetType {
@@ -20,14 +21,14 @@ extension hwaheaRouter: TargetType {
 
   var path: String {
     switch self {
-    case .productList:
+    case .productList, .productSearch:
       return "/products"
     }
   }
 
   var method: Method {
     switch self {
-    case .productList:
+    case .productList, .productSearch:
       return .get
     }
   }
@@ -42,6 +43,11 @@ extension hwaheaRouter: TargetType {
       return .requestParameters(parameters: [
         "skin_type" : skinType,
         "page" : page
+      ], encoding: URLEncoding.queryString)
+    case .productSearch(let skinType, let keyword):
+      return .requestParameters(parameters: [
+        "skin_type" : skinType,
+        "search" : keyword
       ], encoding: URLEncoding.queryString)
     }
   }

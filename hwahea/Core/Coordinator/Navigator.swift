@@ -21,7 +21,7 @@ class Navigator {
 
     switch scene {
     case .productList:
-      let viewModel = ProductListViewModel(productListInteractor: ProductListInteractor(service: service))
+      let viewModel = ProductListViewModel(productListInteractor: ProductInteractor(service: service))
       let viewController = ProductListViewController(viewModel: viewModel, navigator: self)
       return viewController
     case .productDetail:

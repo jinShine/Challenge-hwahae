@@ -19,14 +19,15 @@ class ProductListViewModel: BaseViewModel {
 
   //MARK:- Properties
 
-  let productListInteractor: ProductListInteractor
+  let productInteractor: ProductInteractor
   var products: [Product] = []
+  var skinType: SkinType = .oily
   var page: Int = 1
 
   //MARK:- Init
 
-  init(productListInteractor: ProductListInteractor) {
-    self.productListInteractor = productListInteractor
+  init(productListInteractor: ProductInteractor) {
+    self.productInteractor = productListInteractor
   }
 
   //MARK:- Methods
@@ -34,7 +35,21 @@ class ProductListViewModel: BaseViewModel {
   func updateProduct(skinType: String = "oliy",
                      page: Int = 1,
                      completion: @escaping ((NetworkDataResponse) -> Void)) {
-    self.productListInteractor.fetchProduct(skinType: skinType, page: page) { [weak self] response in
+    self.productInteractor.fetchProduct(skinType: skinType, page: page) { [weak self] response in
+      guard let product = response.json as? ProductList else {
+        completion(response)
+        return
+      }
+      self?.products.removeAll(keepingCapacity: true)
+      product.body.forEach { self?.products.append($0) }
+      completion(response)
+    }
+  }
+
+  func searchProduct(skinType: String = "oliy",
+                     keyword: String,
+                     completion: @escaping ((NetworkDataResponse) -> Void)) {
+    self.productInteractor.searchProduct(skinType: skinType, keyword: keyword) { [weak self] response in
       guard let product = response.json as? ProductList else {
         completion(response)
         return

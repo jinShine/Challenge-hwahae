@@ -55,6 +55,7 @@ class ProductListViewController: BaseViewController {
 
   lazy var searchBar: UISearchBar = {
     let searchBar = UISearchBar()
+    searchBar.delegate = self
     searchBar.placeholder = "검색"
     searchBar.isTranslucent = false
     searchBar.backgroundImage = UIImage()
@@ -75,6 +76,7 @@ class ProductListViewController: BaseViewController {
     collectionView.backgroundColor = .white
     collectionView.dataSource = self
     collectionView.delegate = self
+    collectionView.keyboardDismissMode = .interactive
 
     collectionView.register(
       ProductCell.self,
@@ -169,9 +171,9 @@ class ProductListViewController: BaseViewController {
     didTapSkinType()
   }
 
-  private func update(with type: String = CategoryHeaderView.SkinType.oily.rawValue) {
+  private func update(with type: SkinType = SkinType.oily) {
     self.spinnerView.startAnimating()
-    viewModel.updateProduct(skinType: CategoryHeaderView.SkinType.transform(to: type), page: viewModel.page, completion: { [weak self] response in
+    viewModel.updateProduct(skinType: SkinType.transform(to: type), page: viewModel.page, completion: { [weak self] response in
       self?.spinnerView.stopAnimating()
       guard response.result == .success else {
         self?.showAlert(title: "에러", message: response.error?.message)
@@ -184,15 +186,33 @@ class ProductListViewController: BaseViewController {
 
   private func didTapSkinType() {
     categoryHeaderView.skinTypeDidChange = { [weak self] _ in
-      self?.showAlert(title: "필터", message: "피부 타입", options: [[
-        CategoryHeaderView.SkinType.oily.rawValue : UIAlertAction.Style.default,
-        CategoryHeaderView.SkinType.dry.rawValue : UIAlertAction.Style.default,
-        CategoryHeaderView.SkinType.sensitive.rawValue : UIAlertAction.Style.default,
+      guard let self = self else { return }
+
+      self.showAlert(title: "필터", message: "피부 타입", options: [[
+        SkinType.oily.rawValue : UIAlertAction.Style.default,
+        SkinType.dry.rawValue : UIAlertAction.Style.default,
+        SkinType.sensitive.rawValue : UIAlertAction.Style.default,
         "취소" : UIAlertAction.Style.cancel,
         ]], preferredStyle: .actionSheet, handler: { action in
-          guard let type = action.title, type != "취소" else { return }
-          self?.update(with: type)
+          guard let title = action.title, title != "취소",
+          let type = SkinType(rawValue: title) else { return }
+          self.viewModel.skinType = type
+          self.update(with: self.viewModel.skinType)
       })
+    }
+  }
+
+  private func search(with type: SkinType = SkinType.oily, keyword: String) {
+    self.spinnerView.startAnimating()
+    viewModel.searchProduct(skinType: SkinType.transform(to: type), keyword: keyword) { [weak self] response in
+      self?.spinnerView.stopAnimating()
+      self?.dismissKeyboard()
+      guard response.result == .success else {
+        self?.showAlert(title: "에러", message: response.error?.message)
+        return
+      }
+      DLog(response)
+      self?.reload()
     }
   }
 
@@ -200,6 +220,10 @@ class ProductListViewController: BaseViewController {
     DispatchQueue.main.async { [weak self] in
       self?.collectionView.reloadData()
     }
+  }
+
+  private func dismissKeyboard() {
+    view.endEditing(true)
   }
 
 }
@@ -238,5 +262,13 @@ extension ProductListViewController: UIScrollViewDelegate {
 
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     previousContentOffsetY = scrollView.contentOffset.y
+  }
+}
+
+//MARK:- Search delegate
+extension ProductListViewController: UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    search(with: viewModel.skinType, keyword: searchBar.text!)
+    dismissKeyboard()
   }
 }
