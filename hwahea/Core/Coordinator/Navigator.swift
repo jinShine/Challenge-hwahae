@@ -10,7 +10,7 @@ import UIKit
 
 enum Scene {
   case productList
-  case productDetail
+  case productDetail(id: Int)
 }
 
 class Navigator {
@@ -21,11 +21,13 @@ class Navigator {
 
     switch scene {
     case .productList:
-      let viewModel = ProductListViewModel(productListInteractor: ProductInteractor(service: service))
+      let viewModel = ProductListViewModel(productInteractor: ProductInteractor(service: service))
       let viewController = ProductListViewController(viewModel: viewModel, navigator: self)
       return viewController
-    case .productDetail:
-      return UIViewController()
+    case .productDetail(let id):
+      let viewModel = ProductDetailViewModel(productInteractor: ProductInteractor(service: service))
+      let viewController = ProductDetailViewController(viewModel: viewModel, id: id)
+      return viewController
     }
   }
 }

@@ -12,6 +12,10 @@ class ProductCellViewModel {
 
   private var product: Product
 
+  init(product: Product) {
+    self.product = product
+  }
+
   var productImageURL: URL? {
     return URL(string: product.thumbnailImage)
   }
@@ -22,10 +26,6 @@ class ProductCellViewModel {
 
   var priceInfo: String {
     return product.price + "원"
-  }
-
-  init(product: Product) {
-    self.product = product
   }
   
 }

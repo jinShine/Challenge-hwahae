@@ -55,7 +55,7 @@ extension ProductListViewController: UICollectionViewDataSource {
 extension ProductListViewController: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+    openDetail(at: indexPath)
   }
 
   func collectionView(_ collectionView: UICollectionView,

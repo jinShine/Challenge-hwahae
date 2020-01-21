@@ -1,5 +1,5 @@
 //
-//  ErrorModel.swift
+//  ProductModel.swift
 //  hwahea
 //
 //  Created by Seungjin on 13/01/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ErrorModel: Decodable {
+struct ProductsModel: Decodable {
   var statusCode: Int
-  var body: String
+  var body: [Product]
 }

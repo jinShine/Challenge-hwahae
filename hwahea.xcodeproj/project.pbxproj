@@ -19,7 +19,19 @@
 		5C2A7FA423CC0D7D00372C0A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7FA323CC0D7D00372C0A /* NetworkError.swift */; };
 		5C2A7FA623CC0DFF00372C0A /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7FA523CC0DFF00372C0A /* ErrorModel.swift */; };
 		5C2A7FAA23CC2C1300372C0A /* ProductInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7FA923CC2C1300372C0A /* ProductInteractor.swift */; };
-		5C2A7FAC23CC34AC00372C0A /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7FAB23CC34AC00372C0A /* ProductModel.swift */; };
+		5C2A7FAC23CC34AC00372C0A /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7FAB23CC34AC00372C0A /* ProductsModel.swift */; };
+		5C7AF97023D6F0CB005B702A /* ProductDetailViewController+TableViewDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF96F23D6F0CB005B702A /* ProductDetailViewController+TableViewDecorator.swift */; };
+		5C7AF97223D6F80B005B702A /* TableViewDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF97123D6F80B005B702A /* TableViewDecorator.swift */; };
+		5C7AF97523D6F8FA005B702A /* ProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF97423D6F8FA005B702A /* ProductImageCell.swift */; };
+		5C7AF97723D6F90C005B702A /* ProductImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF97623D6F90C005B702A /* ProductImageCellViewModel.swift */; };
+		5C7AF97923D6F946005B702A /* ProductInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF97823D6F946005B702A /* ProductInfoCell.swift */; };
+		5C7AF97B23D6F959005B702A /* ProductInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF97A23D6F959005B702A /* ProductInfoCellViewModel.swift */; };
+		5C7AF97D23D6F9F1005B702A /* ProductDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF97C23D6F9F1005B702A /* ProductDescriptionCell.swift */; };
+		5C7AF97F23D6F9FF005B702A /* ProductDescriptionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF97E23D6F9FF005B702A /* ProductDescriptionCellViewModel.swift */; };
+		5C7AF98123D6FA08005B702A /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF98023D6FA08005B702A /* NoticeCell.swift */; };
+		5C7AF98323D6FA50005B702A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF98223D6FA50005B702A /* BaseTableViewCell.swift */; };
+		5C7AF98523D700AC005B702A /* ProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF98423D700AC005B702A /* ProductDetailModel.swift */; };
+		5C7AF98723D701A3005B702A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF98623D701A3005B702A /* Product.swift */; };
 		5C9241CF23C4CD940074E54A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9241CE23C4CD940074E54A /* AppDelegate.swift */; };
 		5C9241D823C4CD960074E54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9241D723C4CD960074E54A /* Assets.xcassets */; };
 		5C9241DB23C4CD960074E54A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9241D923C4CD960074E54A /* LaunchScreen.storyboard */; };
@@ -86,7 +98,19 @@
 		5C2A7FA323CC0D7D00372C0A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5C2A7FA523CC0DFF00372C0A /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ErrorModel.swift; path = hwahea/Modules/Model/ErrorModel.swift; sourceTree = SOURCE_ROOT; };
 		5C2A7FA923CC2C1300372C0A /* ProductInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductInteractor.swift; path = hwahea/Modules/Interactor/ProductInteractor.swift; sourceTree = SOURCE_ROOT; };
-		5C2A7FAB23CC34AC00372C0A /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		5C2A7FAB23CC34AC00372C0A /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
+		5C7AF96F23D6F0CB005B702A /* ProductDetailViewController+TableViewDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductDetailViewController+TableViewDecorator.swift"; sourceTree = "<group>"; };
+		5C7AF97123D6F80B005B702A /* TableViewDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDecorator.swift; sourceTree = "<group>"; };
+		5C7AF97423D6F8FA005B702A /* ProductImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCell.swift; sourceTree = "<group>"; };
+		5C7AF97623D6F90C005B702A /* ProductImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCellViewModel.swift; sourceTree = "<group>"; };
+		5C7AF97823D6F946005B702A /* ProductInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoCell.swift; sourceTree = "<group>"; };
+		5C7AF97A23D6F959005B702A /* ProductInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoCellViewModel.swift; sourceTree = "<group>"; };
+		5C7AF97C23D6F9F1005B702A /* ProductDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionCell.swift; sourceTree = "<group>"; };
+		5C7AF97E23D6F9FF005B702A /* ProductDescriptionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionCellViewModel.swift; sourceTree = "<group>"; };
+		5C7AF98023D6FA08005B702A /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
+		5C7AF98223D6FA50005B702A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		5C7AF98423D700AC005B702A /* ProductDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModel.swift; sourceTree = "<group>"; };
+		5C7AF98623D701A3005B702A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5C9241CB23C4CD940074E54A /* hwahea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hwahea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9241CE23C4CD940074E54A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C9241D723C4CD960074E54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,6 +204,20 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		5C7AF97323D6F8BD005B702A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5C7AF97423D6F8FA005B702A /* ProductImageCell.swift */,
+				5C7AF97623D6F90C005B702A /* ProductImageCellViewModel.swift */,
+				5C7AF97823D6F946005B702A /* ProductInfoCell.swift */,
+				5C7AF97A23D6F959005B702A /* ProductInfoCellViewModel.swift */,
+				5C7AF97C23D6F9F1005B702A /* ProductDescriptionCell.swift */,
+				5C7AF97E23D6F9FF005B702A /* ProductDescriptionCellViewModel.swift */,
+				5C7AF98023D6FA08005B702A /* NoticeCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		5C9241C223C4CD940074E54A = {
 			isa = PBXGroup;
 			children = (
@@ -260,7 +298,9 @@
 			isa = PBXGroup;
 			children = (
 				5C2A7FA523CC0DFF00372C0A /* ErrorModel.swift */,
-				5C2A7FAB23CC34AC00372C0A /* ProductModel.swift */,
+				5C2A7FAB23CC34AC00372C0A /* ProductsModel.swift */,
+				5C7AF98423D700AC005B702A /* ProductDetailModel.swift */,
+				5C7AF98623D701A3005B702A /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,8 +361,10 @@
 				5C92421A23C4EB8C0074E54A /* BaseNavigationController.swift */,
 				5C92422123C60DB60074E54A /* RefreshFooterView.swift */,
 				5C92422A23C6129C0074E54A /* BaseCollectionViewCell.swift */,
-				5C2A7F9B23C8551700372C0A /* CategoryHeaderView.swift */,
+				5C7AF98223D6FA50005B702A /* BaseTableViewCell.swift */,
 				5CB951A223CC7203004DEA84 /* CollectionViewDecorator.swift */,
+				5C7AF97123D6F80B005B702A /* TableViewDecorator.swift */,
+				5C2A7F9B23C8551700372C0A /* CategoryHeaderView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -356,8 +398,10 @@
 		5CF3E0F923C56D310041A30D /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				5C7AF97323D6F8BD005B702A /* Cell */,
 				5CF3E0FA23C56D480041A30D /* ProductDetailViewController.swift */,
 				5CF3E0FC23C56DB80041A30D /* ProductDetailViewModel.swift */,
+				5C7AF96F23D6F0CB005B702A /* ProductDetailViewController+TableViewDecorator.swift */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -638,35 +682,47 @@
 			files = (
 				5C2A7FAA23CC2C1300372C0A /* ProductInteractor.swift in Sources */,
 				5C2A7F7123C7319500372C0A /* Transitionable.swift in Sources */,
+				5C7AF97723D6F90C005B702A /* ProductImageCellViewModel.swift in Sources */,
 				5C2A7FA423CC0D7D00372C0A /* NetworkError.swift in Sources */,
 				5C92420723C4D6CD0074E54A /* Application.swift in Sources */,
 				5C92422D23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift in Sources */,
 				5C2A7F6F23C7316500372C0A /* Navigatable.swift in Sources */,
 				5CF3E10A23C59C6A0041A30D /* CALayer+Sketch.swift in Sources */,
+				5C7AF97223D6F80B005B702A /* TableViewDecorator.swift in Sources */,
 				5C9241CF23C4CD940074E54A /* AppDelegate.swift in Sources */,
 				5C92421223C4DF220074E54A /* BaseViewModel.swift in Sources */,
 				5C92422423C60F230074E54A /* UIView+Additions.swift in Sources */,
 				5C92420B23C4D89F0074E54A /* ProductListViewController.swift in Sources */,
+				5C7AF97023D6F0CB005B702A /* ProductDetailViewController+TableViewDecorator.swift in Sources */,
 				5C2A7FA023CC0AD700372C0A /* NetworkDataResponse.swift in Sources */,
 				5CF3E10823C575F20041A30D /* Application+Theme.swift in Sources */,
 				5C92420923C4D7800074E54A /* Navigator.swift in Sources */,
 				5C92421B23C4EB8C0074E54A /* BaseNavigationController.swift in Sources */,
 				5C2A7F9E23C868B100372C0A /* UIViewController+Alerts.swift in Sources */,
 				5C2A7FA623CC0DFF00372C0A /* ErrorModel.swift in Sources */,
+				5C7AF98323D6FA50005B702A /* BaseTableViewCell.swift in Sources */,
+				5C7AF97B23D6F959005B702A /* ProductInfoCellViewModel.swift in Sources */,
+				5C7AF97F23D6F9FF005B702A /* ProductDescriptionCellViewModel.swift in Sources */,
 				5C92421423C4DF5E0074E54A /* ProductListViewModel.swift in Sources */,
 				5CB951A523CC74B5004DEA84 /* ProductCellViewModel.swift in Sources */,
+				5C7AF98123D6FA08005B702A /* NoticeCell.swift in Sources */,
 				5CF3E10123C572A50041A30D /* Font.swift in Sources */,
-				5C2A7FAC23CC34AC00372C0A /* ProductModel.swift in Sources */,
+				5C2A7FAC23CC34AC00372C0A /* ProductsModel.swift in Sources */,
 				5C2A7FA223CC0D2D00372C0A /* Data+Decode.swift in Sources */,
 				5C92422923C612590074E54A /* ProductCell.swift in Sources */,
 				5CF3E0FB23C56D480041A30D /* ProductDetailViewController.swift in Sources */,
 				5CF3E10323C572B60041A30D /* Color.swift in Sources */,
 				5C92422B23C6129C0074E54A /* BaseCollectionViewCell.swift in Sources */,
 				5C92421023C4DDD60074E54A /* BaseViewController.swift in Sources */,
+				5C7AF98523D700AC005B702A /* ProductDetailModel.swift in Sources */,
+				5C7AF97523D6F8FA005B702A /* ProductImageCell.swift in Sources */,
 				5CF3E10623C573490041A30D /* UIColor+Additions.swift in Sources */,
+				5C7AF97923D6F946005B702A /* ProductInfoCell.swift in Sources */,
 				5C92421723C4E29C0074E54A /* AppRepository.swift in Sources */,
 				5C2A7F9C23C8551700372C0A /* CategoryHeaderView.swift in Sources */,
 				5C92422223C60DB60074E54A /* RefreshFooterView.swift in Sources */,
+				5C7AF98723D701A3005B702A /* Product.swift in Sources */,
+				5C7AF97D23D6F9F1005B702A /* ProductDescriptionCell.swift in Sources */,
 				5C92421D23C4ED6F0074E54A /* DebugPrint.swift in Sources */,
 				5C2A7F9A23C849ED00372C0A /* hwaheaRouter.swift in Sources */,
 				5C2A7F9823C8493D00372C0A /* NetworkService.swift in Sources */,

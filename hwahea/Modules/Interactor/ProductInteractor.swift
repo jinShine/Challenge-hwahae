@@ -10,13 +10,16 @@ import Foundation
 
 protocol ProductListProtocol {
 
-  func fetchProduct(skinType: String,
-                    page: Int,
-                    completion: @escaping ((NetworkDataResponse) -> Void))
+  func fetchList(skinType: String,
+                 page: Int,
+                 completion: @escaping ((NetworkDataResponse) -> Void))
 
-  func searchProduct(skinType: String,
-                     keyword: String,
-                     completion: @escaping ((NetworkDataResponse) -> Void))
+  func fetchDetail(id: Int,
+                 completion: @escaping ((NetworkDataResponse) -> Void))
+
+  func search(skinType: String,
+              keyword: String,
+              completion: @escaping ((NetworkDataResponse) -> Void))
 }
 
 class ProductInteractor: ProductListProtocol {
@@ -27,19 +30,26 @@ class ProductInteractor: ProductListProtocol {
     self.service = service
   }
 
-  func fetchProduct(skinType: String,
-                    page: Int,
-                    completion: @escaping ((NetworkDataResponse) -> Void)) {
+  func fetchList(skinType: String,
+                 page: Int,
+                 completion: @escaping ((NetworkDataResponse) -> Void)) {
 
     service.request(to: .productList(skinType: skinType, page: page),
-                    decoder: ProductList.self,
+                    decoder: ProductsModel.self,
                     completion: completion)
   }
 
-  func searchProduct(skinType: String, keyword: String, completion: @escaping ((NetworkDataResponse) -> Void)) {
+  func fetchDetail(id: Int, completion: @escaping ((NetworkDataResponse) -> Void)) {
+
+    service.request(to: .productDetail(id: id),
+                    decoder: ProductDetailModel.self,
+                    completion: completion)
+  }
+
+  func search(skinType: String, keyword: String, completion: @escaping ((NetworkDataResponse) -> Void)) {
 
     service.request(to: .productSearch(skinType: skinType,keyword: keyword),
-                    decoder: ProductList.self,
+                    decoder: ProductsModel.self,
                     completion: completion)
   }
 

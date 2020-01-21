@@ -180,6 +180,18 @@ class ProductListViewController: BaseViewController, ProductListViewProtocol {
     didTapSkinType()
   }
 
+  func reload() {
+    self.refreshFooterView?.startRefreshing()
+    DispatchQueue.main.async { [weak self] in
+      self?.collectionView.reloadData()
+    }
+  }
+
+  func openDetail(at indexPath: IndexPath) {
+    let id = viewModel.products[indexPath.row].id
+    navigator.show(scene: .productDetail(id: id), sender: self, animated: true)
+  }
+
   private func update(with type: SkinType = SkinType.oily) {
     self.spinnerView.startAnimating()
     self.viewModel.removeAllProducts()
@@ -227,13 +239,6 @@ class ProductListViewController: BaseViewController, ProductListViewProtocol {
       }
       DLog(response)
       self?.reload()
-    }
-  }
-
-  func reload() {
-    self.refreshFooterView?.startRefreshing()
-    DispatchQueue.main.async { [weak self] in
-      self?.collectionView.reloadData()
     }
   }
 

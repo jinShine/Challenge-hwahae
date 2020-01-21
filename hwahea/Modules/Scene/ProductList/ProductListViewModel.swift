@@ -40,8 +40,8 @@ class ProductListViewModel: BaseViewModel, ProductListViewModelProtocol {
 
   //MARK:- Init
 
-  init(productListInteractor: ProductInteractor) {
-    self.productInteractor = productListInteractor
+  init(productInteractor: ProductInteractor) {
+    self.productInteractor = productInteractor
   }
 
   //MARK:- Methods
@@ -50,8 +50,8 @@ class ProductListViewModel: BaseViewModel, ProductListViewModelProtocol {
                      page: Int = 1,
                      completion: @escaping ((NetworkDataResponse) -> Void)) {
 
-    self.productInteractor.fetchProduct(skinType: skinType, page: page) { [weak self] response in
-      guard let product = response.json as? ProductList else {
+    self.productInteractor.fetchList(skinType: skinType, page: page) { [weak self] response in
+      guard let product = response.json as? ProductsModel else {
         completion(response)
         return
       }
@@ -65,8 +65,8 @@ class ProductListViewModel: BaseViewModel, ProductListViewModelProtocol {
                      keyword: String,
                      completion: @escaping ((NetworkDataResponse) -> Void)) {
 
-    self.productInteractor.searchProduct(skinType: skinType, keyword: keyword) { [weak self] response in
-      guard let product = response.json as? ProductList else {
+    self.productInteractor.search(skinType: skinType, keyword: keyword) { [weak self] response in
+      guard let product = response.json as? ProductsModel else {
         completion(response)
         return
       }
