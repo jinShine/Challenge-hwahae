@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ProductListType {
+protocol ProductListProtocol {
 
   func fetchProduct(skinType: String,
                     page: Int,
@@ -19,7 +19,7 @@ protocol ProductListType {
                      completion: @escaping ((NetworkDataResponse) -> Void))
 }
 
-class ProductInteractor: ProductListType {
+class ProductInteractor: ProductListProtocol {
 
   let service: NetworkService
 

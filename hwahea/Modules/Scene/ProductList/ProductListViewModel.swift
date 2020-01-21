@@ -8,7 +8,21 @@
 
 import UIKit
 
-class ProductListViewModel: BaseViewModel {
+protocol ProductListViewModelProtocol {
+
+  var products: [Product] { get set }
+  var currentSkinType: SkinType { get set }
+  var page: Int { get }
+
+  func updateProduct(skinType: String, page: Int, completion: @escaping ((NetworkDataResponse) -> Void))
+  func searchProduct(skinType: String, keyword: String, completion: @escaping ((NetworkDataResponse) -> Void))
+  func loadMore(at indexPath: IndexPath, completion: @escaping (NetworkDataResponse) -> Void)
+  func removeAllProducts()
+  func numberOfSections() -> Int
+  func numberOfItemsSection() -> Int
+}
+
+class ProductListViewModel: BaseViewModel, ProductListViewModelProtocol {
 
   //MARK:- Cell Type
 

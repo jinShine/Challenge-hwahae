@@ -8,7 +8,14 @@
 
 import UIKit
 
-class ProductListViewController: BaseViewController {
+protocol ProductListViewProtocol {
+  func setupUI()
+  func setupConstraints()
+  func bind()
+  func reload()
+}
+
+class ProductListViewController: BaseViewController, ProductListViewProtocol {
 
   //MARK:- Constant
 
@@ -94,13 +101,13 @@ class ProductListViewController: BaseViewController {
   //MARK:- Properties
 
   private var previousContentOffsetY: CGFloat = 0.0
-  var viewModel: ProductListViewModel
+  var viewModel: ProductListViewModelProtocol
   var navigator: Navigator
 
 
   //MARK:- Initialize
 
-  init(viewModel: ProductListViewModel, navigator: Navigator) {
+  init(viewModel: ProductListViewModelProtocol, navigator: Navigator) {
     self.viewModel = viewModel
     self.navigator = navigator
 
@@ -167,6 +174,8 @@ class ProductListViewController: BaseViewController {
   }
 
   override func bind() {
+    super.bind()
+
     update()
     didTapSkinType()
   }

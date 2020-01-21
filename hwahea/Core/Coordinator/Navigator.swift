@@ -31,7 +31,7 @@ class Navigator {
 }
 
 //MARK:- Transition
-extension Navigator: Transitioning {
+extension Navigator: Transitionable {
 
   func pop(sender: UIViewController?, toRoot: Bool = false, animated: Bool) {
     if toRoot {

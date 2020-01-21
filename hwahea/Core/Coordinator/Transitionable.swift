@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Transitioning {
+protocol Transitionable {
 
   func pop(sender: UIViewController?, toRoot: Bool, animated: Bool)
 

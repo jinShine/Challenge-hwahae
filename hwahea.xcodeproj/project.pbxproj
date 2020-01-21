@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4FD59055F0A53C7D3C0B9FCC /* Pods_hwaheaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1DC5CAFBB11CB96269B7F3 /* Pods_hwaheaTests.framework */; };
-		5C2A7F6C23C72F2900372C0A /* ProductListAdapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F6B23C72F2900372C0A /* ProductListAdapters.swift */; };
 		5C2A7F6F23C7316500372C0A /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F6E23C7316500372C0A /* Navigatable.swift */; };
-		5C2A7F7123C7319500372C0A /* Transitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F7023C7319500372C0A /* Transitioning.swift */; };
+		5C2A7F7123C7319500372C0A /* Transitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F7023C7319500372C0A /* Transitionable.swift */; };
 		5C2A7F9823C8493D00372C0A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F9723C8493D00372C0A /* NetworkService.swift */; };
 		5C2A7F9A23C849ED00372C0A /* hwaheaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F9923C849ED00372C0A /* hwaheaRouter.swift */; };
 		5C2A7F9C23C8551700372C0A /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A7F9B23C8551700372C0A /* CategoryHeaderView.swift */; };
@@ -76,9 +75,8 @@
 		10213DF1A03CAE662BEB0CC5 /* Pods_hwahea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hwahea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		190E555A004F6D8F9B367A46 /* Pods-hwaheaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hwaheaUITests.release.xcconfig"; path = "Target Support Files/Pods-hwaheaUITests/Pods-hwaheaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A56EBA3500BD9EAA2A9BB07 /* Pods_hwaheaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hwaheaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C2A7F6B23C72F2900372C0A /* ProductListAdapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListAdapters.swift; sourceTree = "<group>"; };
 		5C2A7F6E23C7316500372C0A /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
-		5C2A7F7023C7319500372C0A /* Transitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitioning.swift; sourceTree = "<group>"; };
+		5C2A7F7023C7319500372C0A /* Transitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitionable.swift; sourceTree = "<group>"; };
 		5C2A7F9723C8493D00372C0A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5C2A7F9923C849ED00372C0A /* hwaheaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hwaheaRouter.swift; sourceTree = "<group>"; };
 		5C2A7F9B23C8551700372C0A /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -166,7 +164,7 @@
 			children = (
 				5C92420823C4D7800074E54A /* Navigator.swift */,
 				5C2A7F6E23C7316500372C0A /* Navigatable.swift */,
-				5C2A7F7023C7319500372C0A /* Transitioning.swift */,
+				5C2A7F7023C7319500372C0A /* Transitionable.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -311,7 +309,6 @@
 				5C92420A23C4D89F0074E54A /* ProductListViewController.swift */,
 				5C92421323C4DF5E0074E54A /* ProductListViewModel.swift */,
 				5C92422C23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift */,
-				5C2A7F6B23C72F2900372C0A /* ProductListAdapters.swift */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -640,7 +637,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C2A7FAA23CC2C1300372C0A /* ProductInteractor.swift in Sources */,
-				5C2A7F7123C7319500372C0A /* Transitioning.swift in Sources */,
+				5C2A7F7123C7319500372C0A /* Transitionable.swift in Sources */,
 				5C2A7FA423CC0D7D00372C0A /* NetworkError.swift in Sources */,
 				5C92420723C4D6CD0074E54A /* Application.swift in Sources */,
 				5C92422D23C614540074E54A /* ProductListViewController+CollectionViewDecorator.swift in Sources */,
@@ -670,7 +667,6 @@
 				5C92421723C4E29C0074E54A /* AppRepository.swift in Sources */,
 				5C2A7F9C23C8551700372C0A /* CategoryHeaderView.swift in Sources */,
 				5C92422223C60DB60074E54A /* RefreshFooterView.swift in Sources */,
-				5C2A7F6C23C72F2900372C0A /* ProductListAdapters.swift in Sources */,
 				5C92421D23C4ED6F0074E54A /* DebugPrint.swift in Sources */,
 				5C2A7F9A23C849ED00372C0A /* hwaheaRouter.swift in Sources */,
 				5C2A7F9823C8493D00372C0A /* NetworkService.swift in Sources */,

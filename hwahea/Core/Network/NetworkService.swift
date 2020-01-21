@@ -10,14 +10,14 @@ import Foundation
 import Moya
 import Alamofire
 
-protocol NetworkServiceType {
+protocol Networkable {
 
   func request<T: Decodable>(to router: hwaheaRouter,
                              decoder: T.Type,
                              completion: @escaping (NetworkDataResponse) -> Void)
 }
 
-struct NetworkService: NetworkServiceType {
+struct NetworkService: Networkable {
 
   static private let sharedManager: Alamofire.SessionManager = {
     let configuration = URLSessionConfiguration.default
