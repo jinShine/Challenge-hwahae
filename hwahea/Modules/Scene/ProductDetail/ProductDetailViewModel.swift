@@ -10,7 +10,11 @@ import UIKit
 
 protocol ProductDetailViewModelProtocol {
 
+  var product: Product? { get set }
+
   func fetchProduct(id: Int, completion: @escaping (NetworkDataResponse) -> Void)
+  func numberOfSections() -> Int
+  func numberOfRowsInSection() -> Int
 }
 
 class ProductDetailViewModel: BaseViewModel, ProductDetailViewModelProtocol {
@@ -41,7 +45,23 @@ class ProductDetailViewModel: BaseViewModel, ProductDetailViewModelProtocol {
 
   func fetchProduct(id: Int, completion: @escaping (NetworkDataResponse) -> Void) {
     productInteractor.fetchDetail(id: id) { response in
-      print(response)
+      guard let product = response.json as? ProductDetailModel else {
+        completion(response)
+        return
+      }
+
+      self.product = product.body
+      completion(response)
     }
+  }
+
+  //MARK: - data source
+
+  func numberOfSections() -> Int {
+    return 1
+  }
+
+  func numberOfRowsInSection() -> Int {
+    return CellType.totalCount.rawValue
   }
 }

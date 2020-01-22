@@ -41,10 +41,10 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
     let button = UIButton()
     button.setImage(UIImage(named: "dismiss"), for: .normal)
     button.imageView?.contentMode = .scaleAspectFit
-//    button.backgroundColor = Application.color.darkAlpha
+    button.backgroundColor = Application.color.darkAlpha
     button.layer.cornerRadius = UI.DismissButton.size / 2
     button.layer.masksToBounds = true
-//    button.addTarget(self, action: #selector(didTapDismissAction), for: .touchUpInside)
+    button.addTarget(self, action: #selector(didTapDismissAction), for: .touchUpInside)
     return button
   }()
 
@@ -53,7 +53,6 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
     tableView.backgroundColor = .black
     tableView.estimatedRowHeight = UI.TableView.estimateRowHeight
     tableView.rowHeight = UITableView.automaticDimension
-    tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.height, left: 0, bottom: 0, right: 0)
     tableView.separatorStyle = .none
     tableView.allowsSelection = false
     tableView.showsVerticalScrollIndicator = false
@@ -78,7 +77,7 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
     button.setTitleColor(.white, for: .normal)
     button.titleLabel?.font = Application.font.notoSansBlack(size: 18)
     button.titleLabel?.textAlignment = .center
-//    button.backgroundColor = Application.color.coralPink
+    button.backgroundColor = Application.color.main
     button.layer.cornerRadius = UI.PurchaseButton.cornerRadius
     button.layer.masksToBounds = true
     return button
@@ -111,14 +110,10 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    print("ddddd", id)
   }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-
-    setStatusBarViewBackground(.clear)
   }
 
 
@@ -127,6 +122,9 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
   override func setupUI() {
     super.setupUI()
 
+    view.clipsToBounds = true
+    view.layer.cornerRadius = 30
+    view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     view.backgroundColor = .black
     [tableView, dismissButton, purchaseButton].forEach { view.addSubview($0) }
   }
@@ -134,16 +132,14 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
   override func setupConstraints() {
     super.setupConstraints()
 
-    dismissButton.snp.makeConstraints {
-      $0.top.equalToSuperview().offset(UIApplication.shared.statusBarFrame.height + UI.DismissButton.margin)
-      $0.trailing.equalToSuperview().offset(-UI.DismissButton.margin)
-      $0.size.equalTo(UI.DismissButton.size)
+    tableView.snp.makeConstraints {
+      $0.edges.equalToSuperview()
     }
 
-    tableView.snp.makeConstraints {
-      $0.top.equalToSuperview().offset(-UIApplication.shared.statusBarFrame.height)
-      $0.bottom.equalToSuperview().offset(UIApplication.shared.statusBarFrame.height)
-      $0.leading.trailing.equalToSuperview()
+    dismissButton.snp.makeConstraints {
+      $0.top.equalToSuperview().offset(UI.DismissButton.margin)
+      $0.trailing.equalToSuperview().offset(-UI.DismissButton.margin)
+      $0.size.equalTo(UI.DismissButton.size)
     }
 
     purchaseButton.snp.makeConstraints {
@@ -157,9 +153,31 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
   override func bind() {
     super.bind()
 
-    viewModel.fetchProduct(id: id) { response in
-      
+    fetchProduct(for: id)
+  }
+
+  func reload() {
+    DispatchQueue.main.async { [weak self] in
+      self?.tableView.reloadData()
     }
   }
 
+  @objc
+  func didTapDismissAction() {
+    self.dismiss(animated: true, completion: nil)
+  }
+
+  private func fetchProduct(for id: Int) {
+    self.spinnerView.startAnimating()
+
+    viewModel.fetchProduct(id: id) { [weak self] response in
+      guard response.result == .success else {
+        self?.showAlert(title: "에러", message: response.error?.message)
+        return
+      }
+
+      DLog(response)
+      self?.reload()
+    }
+  }
 }

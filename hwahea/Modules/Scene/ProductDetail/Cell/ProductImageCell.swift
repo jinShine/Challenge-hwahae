@@ -18,7 +18,7 @@ class ProductImageCell: BaseTableViewCell {
 
   //MARK:- UI Properties
 
-  let thumbnailImageView: UIImageView = {
+  let productImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = true
@@ -49,21 +49,18 @@ class ProductImageCell: BaseTableViewCell {
   //MARK:- Methods
 
   override func setupUI() {
-
-    clipsToBounds = true
-    layer.cornerRadius = UI.contentCornerRadius
-    layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-
-    contentView.addSubview(thumbnailImageView)
+    contentView.addSubview(productImageView)
+    backgroundColor = .black
   }
 
   override func setupConstraints() {
-    thumbnailImageView.snp.makeConstraints {
+    productImageView.snp.makeConstraints {
       $0.edges.equalToSuperview()
     }
   }
 
   private func configureView() {
     guard let viewModel = viewModel else { return }
+    productImageView.kf.setImage(with: viewModel.productImageURL)
   }
 }

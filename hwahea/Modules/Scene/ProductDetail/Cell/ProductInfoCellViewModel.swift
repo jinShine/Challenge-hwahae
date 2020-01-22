@@ -10,30 +10,30 @@ import Foundation
 
 class ProductInfoCellViewModel {
 
-  //MARK: Properties
+  private var product: Product
 
-  var seller: String
-  var title: String
-  var discountRate: String?
-  var discountCost: String?
-  var cost: String
-
-
-  //MARK:- Init
-
-  init(seller: String, title: String, discountRate: String? = nil, discountCost: String? = nil, cost: String) {
-
-    self.seller = seller
-    self.title = title
-    if let discountRate = discountRate {
-      self.discountRate = "-" + discountRate
-    }
-
-    if let discountCost = discountCost {
-      self.discountCost = discountCost
-    }
-
-    self.cost = cost
+  init(product: Product) {
+    self.product = product
   }
 
+  var title: String {
+    return product.title
+  }
+
+  var price: String {
+    return priceFormatter(for: product.price)
+  }
+
+  private func priceFormatter(for price: String) -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .decimal
+    formatter.locale = Locale.current
+    formatter.maximumFractionDigits = 0
+    if let price = Double(price),
+      let result = formatter.string(from: NSNumber(value: price)) {
+      return result + "원"
+    }
+
+    return ""
+  }
 }

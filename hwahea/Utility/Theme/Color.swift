@@ -21,5 +21,13 @@ struct Color {
   var dark: UIColor {
     return UIColor(r: 20, g: 20, b: 40)
   }
+
+  var darkAlpha: UIColor {
+    return UIColor(r: 24, g: 24, b: 40, a: 00.16)
+  }
+
+  var paleGrey: UIColor {
+    return UIColor(r: 236, g: 236, b: 245)
+  }
   
 }

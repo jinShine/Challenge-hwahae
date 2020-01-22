@@ -17,7 +17,7 @@ class ProductCellViewModel {
   }
 
   var productImageURL: URL? {
-    return URL(string: product.thumbnailImage)
+    return URL(string: product.thumbnailImage ?? "")
   }
 
   var titleInfo: String {

@@ -26,7 +26,7 @@ class Application {
     window.rootViewController = BaseNavigationController(
       rootViewController: navigator.navigate(to: .productList)
     )
-    window.backgroundColor = .white
+    window.backgroundColor = .black
     window.makeKeyAndVisible()
     self.window = window
   }
