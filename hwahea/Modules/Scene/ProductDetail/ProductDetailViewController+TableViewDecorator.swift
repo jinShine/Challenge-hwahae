@@ -69,6 +69,10 @@ extension ProductDetailViewController: TableViewDecorator {
         withIdentifier: ProductDescriptionCell.reuseIdentifier, for: indexPath
         ) as? ProductDescriptionCell else { return UITableViewCell() }
 
+      if let product = viewModel.product {
+        cell.viewModel = ProductDescriptionCellViewModel(description: product.description)
+      }
+      
       return cell
     case .notice:
       guard let cell = tableView.dequeueReusableCell(

@@ -12,14 +12,12 @@ class ProductDescriptionCellViewModel {
 
   //MARK: Properties
 
-  var description: String
-
+  var description: String?
 
   //MARK:- Init
 
-  init(description: String) {
-    self.description = description
+  init(description: String?) {
+    self.description = description?.replacingOccurrences(of: "\\n", with: "\n")
   }
-
 }
 

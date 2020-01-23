@@ -25,7 +25,7 @@ class ProductListViewController: BaseViewController, ProductListViewProtocol {
     static let titleTopMargin: CGFloat = 4
     
     struct SearchContainer {
-      static let height: CGFloat = 48
+      static let height: CGFloat = UIDevice.current.hasNotch ? 48 : 68
     }
     
     struct SearchBar {
@@ -66,10 +66,17 @@ class ProductListViewController: BaseViewController, ProductListViewProtocol {
     searchBar.placeholder = "검색"
     searchBar.isTranslucent = false
     searchBar.backgroundImage = UIImage()
-    searchBar.searchTextField.backgroundColor = .white
+    if #available(iOS 13.0, *) {
+      searchBar.searchTextField.backgroundColor = .white
+      searchBar.searchTextField.font = Application.font.appleSDGothicNeoRegular(size: 17)
+    } else {
+      if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+        textfield.backgroundColor = .white
+        textfield.font = Application.font.appleSDGothicNeoRegular(size: 17)
+      }
+    }
     searchBar.layer.cornerRadius = UI.SearchBar.cornerRadius
     searchBar.layer.masksToBounds = true
-    searchBar.searchTextField.font = Application.font.appleSDGothicNeoRegular(size: 17)
     searchBar.layer.applyShadow(color: UI.SearchBar.layerColor, alpha: 0, x: 0, y: 2, blur: 4, spread: 0)
     return searchBar
   }()
@@ -155,7 +162,7 @@ class ProductListViewController: BaseViewController, ProductListViewProtocol {
     }
 
     searchBar.snp.makeConstraints {
-      $0.top.equalToSuperview()
+      $0.centerX.equalToSuperview()
       $0.leading.equalToSuperview().offset(UI.SearchBar.margin)
       $0.trailing.bottom.equalToSuperview().offset(-UI.SearchBar.margin)
       $0.height.equalTo(UI.SearchBar.height)

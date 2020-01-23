@@ -37,6 +37,7 @@
 		5C7AF99823D84FC6005B702A /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C7AF99523D84FC6005B702A /* NotoSansCJKkr-Black.otf */; };
 		5C7AF99923D84FC6005B702A /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C7AF99623D84FC6005B702A /* NotoSansCJKkr-Bold.otf */; };
 		5C7AF99B23D92CF5005B702A /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF99A23D92CF5005B702A /* String+Additions.swift */; };
+		5C7AF9A423D971DC005B702A /* Device+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF9A323D971DC005B702A /* Device+Additions.swift */; };
 		5C9241CF23C4CD940074E54A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9241CE23C4CD940074E54A /* AppDelegate.swift */; };
 		5C9241D823C4CD960074E54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9241D723C4CD960074E54A /* Assets.xcassets */; };
 		5C9241DB23C4CD960074E54A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9241D923C4CD960074E54A /* LaunchScreen.storyboard */; };
@@ -119,6 +120,7 @@
 		5C7AF99523D84FC6005B702A /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
 		5C7AF99623D84FC6005B702A /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		5C7AF99A23D92CF5005B702A /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		5C7AF9A323D971DC005B702A /* Device+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Additions.swift"; sourceTree = "<group>"; };
 		5C9241CB23C4CD940074E54A /* hwahea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hwahea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9241CE23C4CD940074E54A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C9241D723C4CD960074E54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				5C2A7FA123CC0D2D00372C0A /* Data+Decode.swift */,
 				5C7AF98A23D8476D005B702A /* UILabel+Additions.swift */,
 				5C7AF99A23D92CF5005B702A /* String+Additions.swift */,
+				5C7AF9A323D971DC005B702A /* Device+Additions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				5C92422923C612590074E54A /* ProductCell.swift in Sources */,
 				5CF3E0FB23C56D480041A30D /* ProductDetailViewController.swift in Sources */,
 				5CF3E10323C572B60041A30D /* Color.swift in Sources */,
+				5C7AF9A423D971DC005B702A /* Device+Additions.swift in Sources */,
 				5C92422B23C6129C0074E54A /* BaseCollectionViewCell.swift in Sources */,
 				5C92421023C4DDD60074E54A /* BaseViewController.swift in Sources */,
 				5C7AF98523D700AC005B702A /* ProductDetailModel.swift in Sources */,

@@ -21,7 +21,8 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
   struct UI {
     struct DismissButton {
       static let size: CGFloat = 40
-      static let margin: CGFloat = 16
+      static let topMargin: CGFloat = UIDevice.current.hasNotch ? 16 : 36
+      static let trailingMargin: CGFloat = 16
     }
     struct TableView {
       static let estimateRowHeight: CGFloat = 100
@@ -114,6 +115,7 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    purchaseButtonAnimations()
   }
 
 
@@ -125,7 +127,7 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
     view.clipsToBounds = true
     view.layer.cornerRadius = 30
     view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-    view.backgroundColor = .black
+    view.backgroundColor = .white
     [tableView, dismissButton, purchaseButton].forEach { view.addSubview($0) }
   }
 
@@ -133,12 +135,13 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
     super.setupConstraints()
 
     tableView.snp.makeConstraints {
-      $0.edges.equalToSuperview()
+      $0.top.leading.trailing.equalToSuperview()
+      $0.bottom.equalToSuperview().offset(UIApplication.shared.statusBarFrame.height)
     }
 
     dismissButton.snp.makeConstraints {
-      $0.top.equalToSuperview().offset(UI.DismissButton.margin)
-      $0.trailing.equalToSuperview().offset(-UI.DismissButton.margin)
+      $0.top.equalToSuperview().offset(UI.DismissButton.topMargin)
+      $0.trailing.equalToSuperview().offset(-UI.DismissButton.trailingMargin)
       $0.size.equalTo(UI.DismissButton.size)
     }
 
@@ -171,6 +174,8 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
     self.spinnerView.startAnimating()
 
     viewModel.fetchProduct(id: id) { [weak self] response in
+      self?.spinnerView.stopAnimating()
+
       guard response.result == .success else {
         self?.showAlert(title: "에러", message: response.error?.message)
         return
@@ -179,5 +184,20 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
       DLog(response)
       self?.reload()
     }
+  }
+
+  private func purchaseButtonAnimations() {
+
+    //Purchase Button
+    self.purchaseButton.snp.updateConstraints {
+      $0.bottom.equalToSuperview().offset(UI.PurchaseButton.bottomMargin)
+    }
+
+    UIView.animate(withDuration: 1.0,
+                   delay: 0.3,
+                   usingSpringWithDamping: 0.7,
+                   initialSpringVelocity: 0.5,
+                   options: [.curveEaseInOut],
+                   animations: { self.view.layoutIfNeeded() })
   }
 }
