@@ -21,19 +21,6 @@ class ProductInfoCellViewModel {
   }
 
   var price: String {
-    return priceFormatter(for: product.price)
-  }
-
-  private func priceFormatter(for price: String) -> String {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.locale = Locale.current
-    formatter.maximumFractionDigits = 0
-    if let price = Double(price),
-      let result = formatter.string(from: NSNumber(value: price)) {
-      return result + "원"
-    }
-
-    return ""
+    return product.price.decimalFormatter + "원"
   }
 }
