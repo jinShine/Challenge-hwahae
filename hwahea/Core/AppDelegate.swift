@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     return true
   }
-  
 
   private func setupRoot() {
     Application.shared.setupInitialScreen()

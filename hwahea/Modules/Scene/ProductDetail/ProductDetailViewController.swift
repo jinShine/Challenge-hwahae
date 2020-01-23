@@ -57,6 +57,7 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
     tableView.separatorStyle = .none
     tableView.allowsSelection = false
     tableView.showsVerticalScrollIndicator = false
+    tableView.bounces = false
     tableView.delegate = self
     tableView.dataSource = self
 
@@ -111,11 +112,17 @@ class ProductDetailViewController: BaseViewController, ProductDetailViewProtocol
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    Application.shared.window?.backgroundColor = .black
   }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     purchaseButtonAnimations()
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    Application.shared.window?.backgroundColor = .white
   }
 
 

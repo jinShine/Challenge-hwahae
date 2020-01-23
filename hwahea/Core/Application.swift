@@ -12,12 +12,10 @@ class Application {
   
   var window: UIWindow?
   var navigator: Navigator
-  let repository: AppRepository
   let service: NetworkService
   
   private init() {
     self.navigator = Navigator()
-    self.repository = AppRepository()
     self.service = NetworkService()
   }
   
@@ -26,7 +24,7 @@ class Application {
     window.rootViewController = BaseNavigationController(
       rootViewController: navigator.navigate(to: .productList)
     )
-    window.backgroundColor = .black
+    window.backgroundColor = .white
     window.makeKeyAndVisible()
     self.window = window
   }
