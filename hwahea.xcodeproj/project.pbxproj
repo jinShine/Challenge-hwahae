@@ -72,6 +72,7 @@
 		5CBDC76623DD465000540D26 /* product_detail.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CBDC76523DD465000540D26 /* product_detail.json */; };
 		5CBDC76823DD479A00540D26 /* ProductDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDC76723DD479A00540D26 /* ProductDetailViewModelTest.swift */; };
 		5CBDC76A23DD4E2100540D26 /* ProductImageCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDC76923DD4E2100540D26 /* ProductImageCellViewModelTest.swift */; };
+		5CBDC76C23DD6A4700540D26 /* ProductInfoCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDC76B23DD6A4700540D26 /* ProductInfoCellViewModelTest.swift */; };
 		5CF3E0FB23C56D480041A30D /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E0FA23C56D480041A30D /* ProductDetailViewController.swift */; };
 		5CF3E0FD23C56DB80041A30D /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E0FC23C56DB80041A30D /* ProductDetailViewModel.swift */; };
 		5CF3E10123C572A50041A30D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E10023C572A50041A30D /* Font.swift */; };
@@ -174,6 +175,7 @@
 		5CBDC76523DD465000540D26 /* product_detail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = product_detail.json; sourceTree = SOURCE_ROOT; };
 		5CBDC76723DD479A00540D26 /* ProductDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModelTest.swift; sourceTree = "<group>"; };
 		5CBDC76923DD4E2100540D26 /* ProductImageCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCellViewModelTest.swift; sourceTree = "<group>"; };
+		5CBDC76B23DD6A4700540D26 /* ProductInfoCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoCellViewModelTest.swift; sourceTree = "<group>"; };
 		5CF3E0FA23C56D480041A30D /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		5CF3E0FC23C56DB80041A30D /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		5CF3E10023C572A50041A30D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 			children = (
 				5CBDC76723DD479A00540D26 /* ProductDetailViewModelTest.swift */,
 				5CBDC76923DD4E2100540D26 /* ProductImageCellViewModelTest.swift */,
+				5CBDC76B23DD6A4700540D26 /* ProductInfoCellViewModelTest.swift */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 			files = (
 				5CBDC75F23DD2D0A00540D26 /* ProductCellViewModelTest.swift in Sources */,
 				5CBDC76A23DD4E2100540D26 /* ProductImageCellViewModelTest.swift in Sources */,
+				5CBDC76C23DD6A4700540D26 /* ProductInfoCellViewModelTest.swift in Sources */,
 				5CBDC75023DB4E3300540D26 /* ProductListViewModelTest.swift in Sources */,
 				5CBDC75423DB4FB500540D26 /* StubType.swift in Sources */,
 				5CBDC76123DD3F2000540D26 /* Mocker.swift in Sources */,
