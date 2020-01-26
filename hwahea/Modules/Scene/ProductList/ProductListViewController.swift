@@ -90,7 +90,7 @@ class ProductListViewController: BaseViewController, ProductListViewProtocol {
     collectionView.backgroundColor = .white
     collectionView.dataSource = self
     collectionView.delegate = self
-    collectionView.keyboardDismissMode = .interactive
+    collectionView.keyboardDismissMode = .onDrag
 
     collectionView.register(
       ProductCell.self,
@@ -249,7 +249,7 @@ class ProductListViewController: BaseViewController, ProductListViewProtocol {
     }
   }
 
-  private func dismissKeyboard() {
+  func dismissKeyboard() {
     view.endEditing(true)
   }
 

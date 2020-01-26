@@ -55,6 +55,7 @@ extension ProductListViewController: UICollectionViewDataSource {
 extension ProductListViewController: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    dismissKeyboard()
     openDetail(at: indexPath)
   }
 
