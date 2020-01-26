@@ -14,7 +14,7 @@ protocol ProductListViewModelProtocol {
   var currentSkinType: SkinType { get set }
   var page: Int { get }
 
-  func updateProduct(skinType: String, page: Int, completion: @escaping ((NetworkDataResponse) -> Void))
+  func fetchProduct(skinType: String, page: Int, completion: @escaping ((NetworkDataResponse) -> Void))
   func searchProduct(skinType: String, keyword: String, completion: @escaping ((NetworkDataResponse) -> Void))
   func loadMore(at indexPath: IndexPath, completion: @escaping (NetworkDataResponse) -> Void)
   func removeAllProducts()
@@ -46,17 +46,17 @@ class ProductListViewModel: BaseViewModel, ProductListViewModelProtocol {
 
   //MARK:- Methods
 
-  func updateProduct(skinType: String = "oliy",
+  func fetchProduct(skinType: String = "oliy",
                      page: Int = 1,
                      completion: @escaping ((NetworkDataResponse) -> Void)) {
 
-    self.productInteractor.fetchList(skinType: skinType, page: page) { [weak self] response in
-      guard let product = response.json as? ProductsModel else {
+    self.productInteractor.fetchProducts(skinType: skinType, page: page) { [weak self] response in
+      guard let data = response.json as? ProductsModel else {
         completion(response)
         return
       }
 
-      product.body.forEach { self?.products.append($0) }
+      data.body.forEach { self?.products.append($0) }
       completion(response)
     }
   }
@@ -66,13 +66,13 @@ class ProductListViewModel: BaseViewModel, ProductListViewModelProtocol {
                      completion: @escaping ((NetworkDataResponse) -> Void)) {
 
     self.productInteractor.search(skinType: skinType, keyword: keyword) { [weak self] response in
-      guard let product = response.json as? ProductsModel else {
+      guard let data = response.json as? ProductsModel else {
         completion(response)
         return
       }
 
       self?.removeAllProducts()
-      product.body.forEach { self?.products.append($0) }
+      data.body.forEach { self?.products.append($0) }
       completion(response)
     }
   }
@@ -82,7 +82,7 @@ class ProductListViewModel: BaseViewModel, ProductListViewModelProtocol {
 
     if indexPath.item == products.count - 1 {
       page += 1
-      updateProduct(skinType: SkinType.transform(to: currentSkinType),
+      fetchProduct(skinType: SkinType.transform(to: currentSkinType),
                     page: page,
                     completion: completion)
     }

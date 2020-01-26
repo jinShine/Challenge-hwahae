@@ -44,13 +44,13 @@ class ProductDetailViewModel: BaseViewModel, ProductDetailViewModelProtocol {
   //MARK:- Methods
 
   func fetchProduct(id: Int, completion: @escaping (NetworkDataResponse) -> Void) {
-    productInteractor.fetchDetail(id: id) { response in
-      guard let product = response.json as? ProductDetailModel else {
+    productInteractor.fetchProduct(id: id) { response in
+      guard let data = response.json as? ProductDetailModel else {
         completion(response)
         return
       }
 
-      self.product = product.body
+      self.product = data.body
       completion(response)
     }
   }

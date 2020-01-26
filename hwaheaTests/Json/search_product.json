@@ -1,0 +1,146 @@
+{
+  "statusCode": 200,
+  "body": [
+    {
+      "id": 142,
+      "price": "26440",
+      "oily_score": 99,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/0f6a8b85-1622-448c-a281-82a944629003.jpg",
+      "title": "아모레퍼시픽 설화수 여민 마스크"
+    },
+    {
+      "id": 1029,
+      "price": "3700",
+      "oily_score": 94,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/ead48212-c76a-4636-bf8b-946c6b72421e.jpg",
+      "title": "아모레퍼시픽 에뛰드하우스 지니 멀티 오일 20ml"
+    },
+    {
+      "id": 342,
+      "price": "33290",
+      "oily_score": 90,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/be70f4c0-860c-4fd8-b562-571acbff33fa.jpg",
+      "title": "아모레퍼시픽 설화수 자정 토닝 팩 80ml"
+    },
+    {
+      "id": 843,
+      "price": "14420",
+      "oily_score": 89,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/d96fdb95-3189-48e5-8b2f-578540dee10c.jpg",
+      "title": "아모레퍼시픽 라네즈 시카 슬리핑 마스크 60ml"
+    },
+    {
+      "id": 157,
+      "price": "7450",
+      "oily_score": 88,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/9dd0eb7b-547b-4012-a50c-9bd4dd59dbe1.jpg",
+      "title": "아모레퍼시픽 마몽드 커버 파우더 쿠션 리필포함"
+    },
+    {
+      "id": 530,
+      "price": "19240",
+      "oily_score": 86,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/cf9d92fe-6a06-43be-b787-9222f1879786.jpg",
+      "title": "아모레퍼시픽 라네즈 화이트 듀 톤업크림 [50ML]"
+    },
+    {
+      "id": 152,
+      "price": "17030",
+      "oily_score": 84,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/4258eb0a-c343-400a-ac88-fe9234324ac0.jpg",
+      "title": "아모레퍼시픽 한율 활기 영양크림 [50ML]"
+    },
+    {
+      "id": 546,
+      "price": "41190",
+      "oily_score": 82,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/5109d51b-f887-4632-910c-38a42c0aef3e.jpg",
+      "title": "아모레퍼시픽 설화수 자정 미백uv팩트 화이트닝"
+    },
+    {
+      "id": 815,
+      "price": "27410",
+      "oily_score": 77,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/acd3028e-a951-4854-8bb3-b0a6a600c649.jpg",
+      "title": "아모레퍼시픽 라네즈 결점없이균일하게 밝아지는 베이스 쿠션"
+    },
+    {
+      "id": 706,
+      "price": "15470",
+      "oily_score": 73,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/ad0791de-b024-4b9b-935c-3b859510c66a.jpg",
+      "title": "아모레퍼시픽 라네즈 화이트 플러스 리뉴 스킨 리파이너"
+    },
+    {
+      "id": 830,
+      "price": "23580",
+      "oily_score": 72,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/5c77b9f5-4508-42b6-806d-bf889b9b1d58.jpg",
+      "title": "아모레퍼시픽 라네즈 모이스처크림 [W3BAC29]"
+    },
+    {
+      "id": 476,
+      "price": "1260",
+      "oily_score": 71,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/47120dd1-46bf-430d-a0c5-0b38d8e2075f.jpg",
+      "title": "아모레퍼시픽 에뛰드하우스 호빵 타파 마사지 돌기 마스크 28g"
+    },
+    {
+      "id": 981,
+      "price": "13370",
+      "oily_score": 57,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/aafeddac-1d39-408d-8d5f-13a784ef9120.jpg",
+      "title": "아모레퍼시픽 리리코스 마린 플라센타 쿠션 리필 15g"
+    },
+    {
+      "id": 933,
+      "price": "16550",
+      "oily_score": 52,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/4877bc76-4211-48b2-a68c-a163ddf0b379.jpg",
+      "title": "아모레퍼시픽 에뛰드하우스 해피 피글렛 수분가득 콜라겐 2종세트"
+    },
+    {
+      "id": 498,
+      "price": "19540",
+      "oily_score": 50,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/6124b089-cf8c-4d96-914e-9552fc5f1c75.jpg",
+      "title": "아모레퍼시픽 라네즈 포커스 액티브 앰플 판테놀 7ml x 4병"
+    },
+    {
+      "id": 6,
+      "price": "70660",
+      "oily_score": 49,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/8e7a54f7-93a6-4572-b6e0-cdd818e4cbd8.jpg",
+      "title": "아모레퍼시픽 설화수 설린에센스 50ml"
+    },
+    {
+      "id": 522,
+      "price": "95470",
+      "oily_score": 45,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/8b40b926-9114-4c75-840f-a7698f4ffc54.jpg",
+      "title": "아모레퍼시픽 한율 극진 에센스 세트 [50ML]"
+    },
+    {
+      "id": 597,
+      "price": "7050",
+      "oily_score": 39,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/bc0a13c2-b704-4dfc-9d8d-85d7dc817172.jpg",
+      "title": "아모레퍼시픽 에뛰드하우스 픽앤 클린 리무버 티슈 80매"
+    },
+    {
+      "id": 235,
+      "price": "30530",
+      "oily_score": 38,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/b5ab144e-9bc4-4629-9a98-2fc383c76d2d.jpg",
+      "title": "아모레퍼시픽 한율 서담 탄력 에멀전"
+    },
+    {
+      "id": 993,
+      "price": "30020",
+      "oily_score": 37,
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/48db0af2-ff0e-475a-80b8-01afa584bc92.jpg",
+      "title": "아모레퍼시픽 설화수 자정 팩트"
+    }
+  ],
+  "scanned_count": 20
+}

@@ -203,7 +203,7 @@ class ProductListViewController: BaseViewController, ProductListViewProtocol {
     self.spinnerView.startAnimating()
     self.viewModel.removeAllProducts()
 
-    viewModel.updateProduct(skinType: SkinType.transform(to: type), page: viewModel.page, completion: { [weak self] response in
+    viewModel.fetchProduct(skinType: SkinType.transform(to: type), page: viewModel.page, completion: { [weak self] response in
       self?.spinnerView.stopAnimating()
 
       guard response.result == .success else {

@@ -61,6 +61,7 @@ extension ProductListViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView,
                       willDisplay cell: UICollectionViewCell,
                       forItemAt indexPath: IndexPath) {
+    
     viewModel.loadMore(at: indexPath) { [weak self] response in
       self?.refreshFooterView?.endRefreshing()
       guard response.result == .success else {

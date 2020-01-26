@@ -1,0 +1,4 @@
+{
+  "statusCode": 404,
+  "body": "ValidateSkinTypeParameter - skin_type은 ['oily', 'dry', 'sensitive'] 요청만 가능합니다 !"
+}

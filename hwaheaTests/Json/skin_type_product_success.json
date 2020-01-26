@@ -1,0 +1,146 @@
+{
+  "statusCode": 200,
+  "body": [
+    {
+      "dry_score": 100,
+      "id": 873,
+      "price": "95410",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/f5177afd-60b4-4cae-ac33-8560a2742c12.jpg",
+      "title": "피토메르 아빼장 마스크 150ml"
+    },
+    {
+      "dry_score": 100,
+      "id": 222,
+      "price": "11010",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/cb10fc27-49f4-4c69-a371-b1427b02d9d2.jpg",
+      "title": "LG생활건강 더페이스샵 더테라피 에센셜 포뮬러 에멀전 130ml"
+    },
+    {
+      "dry_score": 100,
+      "id": 589,
+      "price": "11120",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/75bbabe0-dfb1-498f-af4c-e5d5646c682d.jpg",
+      "title": "데이셀 닥터비타 C 30ml"
+    },
+    {
+      "dry_score": 100,
+      "id": 263,
+      "price": "15120",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/ea0a7ec8-a344-4b63-9703-f6d7095e162c.jpg",
+      "title": "스킨큐어 노스테 셀라이크 울트라 리치 모이스처 수딩 아토 크림 75g"
+    },
+    {
+      "dry_score": 100,
+      "id": 610,
+      "price": "9770",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/49babea0-6ac0-4b9a-bae2-7087465a80c0.jpg",
+      "title": "듀이트리 가인·화 로터스 엑스트랙트 마스크"
+    },
+    {
+      "dry_score": 100,
+      "id": 39,
+      "price": "8420",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/d03de533-a85c-4b13-a4f6-2325800af329.jpg",
+      "title": "라끄베르 옴므 리차지 스킨 185ml"
+    },
+    {
+      "dry_score": 100,
+      "id": 380,
+      "price": "80190",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/9579cd7d-fc15-486a-b8aa-6a33e1f3f60c.jpg",
+      "title": "쏘티스 이뮈니시엉스 앰플 2ml 20개"
+    },
+    {
+      "dry_score": 99,
+      "id": 751,
+      "price": "68620",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/663c4e1f-042e-4606-8f2c-d6b901783c20.jpg",
+      "title": "LG생활건강 비욘드 아쿠아 블룸 4종 세트"
+    },
+    {
+      "dry_score": 99,
+      "id": 1016,
+      "price": "10890",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/99bd719b-053f-4f71-90b5-79dafd70cc61.jpg",
+      "title": "VDL 엑스퍼트 메탈 쿠션 파운데이션"
+    },
+    {
+      "dry_score": 99,
+      "id": 167,
+      "price": "8490",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/9a95de41-c959-4c39-ab93-a398ad5effcd.jpg",
+      "title": "아모레퍼시픽 헤라 화이트 프로그램 래디언스 마스크"
+    },
+    {
+      "dry_score": 99,
+      "id": 479,
+      "price": "6020",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/1b52c22e-53f4-4d36-a6f8-62090b0b273f.jpg",
+      "title": "알로에베라 미인 발크림 각질케어 수분공급 비타민"
+    },
+    {
+      "dry_score": 99,
+      "id": 740,
+      "price": "38450",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/ac7d8e15-0258-4b6f-8809-5b9177ac9d80.jpg",
+      "title": "NV페리콘MD 페리콘 MD 페리콘 맨 수퍼 클린 페이스 워시 [150ML]"
+    },
+    {
+      "dry_score": 99,
+      "id": 282,
+      "price": "9630",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/8c613788-4f57-4788-9eb5-9db2e3f7c5e4.jpg",
+      "title": "라미화장품 지오 C 워터 트윈케이크"
+    },
+    {
+      "dry_score": 99,
+      "id": 892,
+      "price": "54090",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/f50acb8f-f1ab-49ba-85f2-f73de9021138.jpg",
+      "title": "LG생활건강 비욘드 타임리스 셀 2종 세트"
+    },
+    {
+      "dry_score": 99,
+      "id": 301,
+      "price": "12520",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/99ac6c40-83ac-4136-91f4-4ef6fa0fe903.jpg",
+      "title": "런닝맨 리우 스틱 선밤 자외선차단제"
+    },
+    {
+      "dry_score": 99,
+      "id": 55,
+      "price": "19090",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/13285c71-3964-4ae6-9aff-740224f87c04.jpg",
+      "title": "셀퓨전씨 포스트알파 아쿠아포린 크림 50ml"
+    },
+    {
+      "dry_score": 99,
+      "id": 1064,
+      "price": "38700",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/f9459a6d-6637-49b2-9b81-544820626d9f.jpg",
+      "title": "DMCK 비타 C 화이트 토너 500ml"
+    },
+    {
+      "dry_score": 99,
+      "id": 568,
+      "price": "4000",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/9eb19519-e329-4291-a2e2-cd1c684622de.jpg",
+      "title": "네이처리퍼블릭 에코크레용 립벨벳 2.8g"
+    },
+    {
+      "dry_score": 99,
+      "id": 298,
+      "price": "13950",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/eec7aff2-35bc-408b-a594-198a842acafa.jpg",
+      "title": "에이블C&C 미샤 타임 레볼루션 바이탈리티 크림"
+    },
+    {
+      "dry_score": 99,
+      "id": 953,
+      "price": "15390",
+      "thumbnail_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/thumbnail/c5b900b1-7b5b-422a-bf10-c69b55702730.jpg",
+      "title": "가인비책 진 인진쑥 에센스 150ml x 2개"
+    }
+  ],
+  "scanned_count": 20
+}

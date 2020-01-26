@@ -10,11 +10,11 @@ import Foundation
 
 protocol ProductListProtocol {
 
-  func fetchList(skinType: String,
+  func fetchProducts(skinType: String,
                  page: Int,
                  completion: @escaping ((NetworkDataResponse) -> Void))
 
-  func fetchDetail(id: Int,
+  func fetchProduct(id: Int,
                  completion: @escaping ((NetworkDataResponse) -> Void))
 
   func search(skinType: String,
@@ -24,13 +24,13 @@ protocol ProductListProtocol {
 
 class ProductInteractor: ProductListProtocol {
 
-  let service: NetworkService
+  let service: Networkable
 
-  init(service: NetworkService) {
+  init(service: Networkable) {
     self.service = service
   }
 
-  func fetchList(skinType: String,
+  func fetchProducts(skinType: String,
                  page: Int,
                  completion: @escaping ((NetworkDataResponse) -> Void)) {
 
@@ -39,7 +39,7 @@ class ProductInteractor: ProductListProtocol {
                     completion: completion)
   }
 
-  func fetchDetail(id: Int, completion: @escaping ((NetworkDataResponse) -> Void)) {
+  func fetchProduct(id: Int, completion: @escaping ((NetworkDataResponse) -> Void)) {
 
     service.request(to: .productDetail(id: id),
                     decoder: ProductDetailModel.self,
