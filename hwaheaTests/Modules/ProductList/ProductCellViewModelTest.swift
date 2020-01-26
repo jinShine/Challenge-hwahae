@@ -15,11 +15,13 @@ class ProductCellViewModelTest: XCTestCase {
   
   override func setUp() {
     super.setUp()
-
+    
     expectation { expectation in
-      Mocker.product(stub: .all_product) { products in
-        self.product = products.body.first
-        expectation.fulfill()
+      Mocker.product(
+        stub: .all_product,
+        to: .productList(skinType: "oily", page: 1)) { response in
+          self.product = response
+          expectation.fulfill()
       }
     }
   }

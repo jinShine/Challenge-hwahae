@@ -13,5 +13,6 @@ enum StubType: String {
   case all_product,
   skin_type_product_success,
   skin_type_product_failure,
-  search_product
+  search_product,
+  product_detail
 }

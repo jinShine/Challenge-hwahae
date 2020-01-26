@@ -1,0 +1,13 @@
+{
+  "statusCode": 200,
+  "body": {
+    "dry_score": 40,
+    "full_size_image": "https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/image/4f4e1aa1-4cb5-4347-a255-8583ed726655.jpg",
+    "oily_score": 37,
+    "sensitive_score": 30,
+    "description": "코엘시아 로즈 폼 클렌저 120ml\\n코엘시아 로즈 폼 클렌저 120ml\\n코엘시아 로즈 폼 클렌저 120ml\\n코엘시아 로즈 폼 클렌저 120ml\\n코엘시아 로즈 폼 클렌저 120ml\\n코엘시아 로즈 폼 클렌저 120ml\\n코엘시아 로즈 폼 클렌저 120ml\\n코엘시아 로즈 폼 클렌저 120ml\\n코엘시아 로즈 폼 클렌저 120ml\\n코엘시아 로즈 폼 클렌저 120ml",
+    "id": 100,
+    "price": "6640",
+    "title": "코엘시아 로즈 폼 클렌저 120ml"
+  }
+}

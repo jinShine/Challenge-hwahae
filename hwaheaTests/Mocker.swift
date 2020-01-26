@@ -10,15 +10,22 @@ import XCTest
 @testable import hwahea
 
 class Mocker: NetworkServiceStub {
-    
-  static func product(stub: StubType, completion: @escaping ((ProductsModel) -> Void) ) {
+  
+  static func product(stub: StubType, to router: hwaheaRouter, completion: @escaping ((Product) -> Void) ) {
     let mocker = Mocker(stub: stub)
-    mocker.request(to: .productList(skinType: "oily", page: 1), decoder: ProductsModel.self) { response in
-      guard let data = response.json as? ProductsModel else {
-        return
+    switch router {
+    case .productList:
+      mocker.request(to: router, decoder: ProductsModel.self) { response in
+        guard let data = response.json as? ProductsModel,
+          let product = data.body.first else { return }
+        completion(product)
       }
-      
-      completion(data)
+    case .productDetail:
+      mocker.request(to: router, decoder: ProductDetailModel.self) { response in
+        guard let data = response.json as? ProductDetailModel else { return }
+        completion(data.body)
+      }
+    default: return
     }
   }
 }
